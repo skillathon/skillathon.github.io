@@ -360,6 +360,7 @@ h6 {
   right: 15px;
 }
 
+
 /* Mobile Navigation */
 
 .mobile-nav {
@@ -406,6 +407,12 @@ h6 {
 
 .mobile-nav .active.drop-down > a:after {
   content: "\f077";
+}
+
+.mobile-nav .drop-down.testxxd > a:after {
+  content: "\f107";
+  font-family: FontAwesome;
+  right:14rem;
 }
 
 .mobile-nav .drop-down > a {

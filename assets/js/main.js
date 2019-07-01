@@ -169,6 +169,14 @@ function showSubMenu1(){
   }
   else if(tr === 'block'){
     document.getElementById('mobileNav1').style.display = 'none'
+  } 
+}
+function showSubMenu2(){
+  var tr = document.getElementById('mobileNav2').style.display
+  if(tr === 'none'){
+    document.getElementById('mobileNav2').style.display = 'block'
   }
-  
+  else if(tr === 'block'){
+    document.getElementById('mobileNav2').style.display = 'none'
+  }
 }

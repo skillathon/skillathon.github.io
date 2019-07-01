@@ -170,7 +170,7 @@ h6 {
 #header.header-scrolled,
 #header.header-pages {
   margin-top:-2px;
-  height: 106px;
+  height: 85px;
   padding: 15px 0;
   background-color: whitesmoke;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
@@ -444,7 +444,7 @@ h6 {
 }
 
 .mobile-nav-toggle i {
-  margin: 18px 18px 0 0;
+  margin: 25px 10px 0 0;
   color: #065e77;
 }
 

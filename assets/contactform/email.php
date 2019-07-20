@@ -9,7 +9,7 @@
 
     $from_name = "your name goes here";
 
-    $to_email = $request->email;
+    $to_email = "m.afroz4@gmail.com";
 
     $contact = "<p><strong>Name:</strong>$from_name</p><p><strong>Email:</strong> $from_email</p>";
 

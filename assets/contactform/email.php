@@ -1,5 +1,5 @@
 <?php
-    header('Content-type: application/json');
+    /* header('Content-type: application/json');
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
     
@@ -33,22 +33,31 @@
     echo json_encode($response_array);
     echo json_encode($from_email);
     header($response_array);
-    return $from_email;
+    return $from_email; */
 
-/*     header('Content-type: application/json');
+ header('Content-type: application/json');
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
     $request = json_decode(file_get_contents("php://input"));
     $to_email = $request->email;
     $email_subject = "Contact form of Sombank";
-    $from_email = "sombank@sombank.skillathontech.com";
-	$email_to = $to_email
+    $from_email = "info@skillathontech.com";
+    /* $email_to = $to_email */
+    $email_to = "m.afroz4@gmail.com";
 	$headers = 'From: ' . $from_email . "\r\n";
 	$content  = "Contact Person Name: \r\n";
 	$content .= "Email ID: " . $from_email . "\r\n";
 	$content .= "Contact Number: \r\n";
 	$content .= "Company or Hospital Name: \r\n";
 	$content .= "Message: Test";
-	@mail($email_to, $email_subject, $content, $headers); */
+    @mail($email_to, $email_subject, $content, $headers);
+    
+    $response_array['status'] = 'success';
+    $response_array['from'] = $from_email;
+
+    echo json_encode($response_array);
+    echo json_encode($from_email);
+    header($response_array);
+    return $from_email; 
 ?>

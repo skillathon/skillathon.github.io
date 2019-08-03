@@ -5,89 +5,57 @@
   !*** ./src/$$_lazy_route_resource lazy namespace object ***!
   \**********************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncaught exception popping up in devtools
-	return Promise.resolve().then(function() {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
+var map = {
+	"./about/about.module": [
+		"./src/app/about/about.module.ts",
+		"about-about-module"
+	],
+	"./business/business.module": [
+		"./src/app/business/business.module.ts",
+		"business-business-module"
+	],
+	"./corporate/corporate.module": [
+		"./src/app/corporate/corporate.module.ts",
+		"corporate-corporate-module"
+	],
+	"./home/home.module": [
+		"./src/app/home/home.module.ts",
+		"home-home-module"
+	],
+	"./personal-account/personal-account.module": [
+		"./src/app/personal-account/personal-account.module.ts",
+		"personal-account-personal-account-module"
+	],
+	"./pricing/pricing.module": [
+		"./src/app/pricing/pricing.module.ts",
+		"pricing-pricing-module"
+	],
+	"./t-plus-account/t-plus-account.module": [
+		"./src/app/t-plus-account/t-plus-account.module.ts",
+		"t-plus-account-t-plus-account-module"
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids) {
+		return Promise.resolve().then(function() {
+			var e = new Error("Cannot find module '" + req + "'");
+			e.code = 'MODULE_NOT_FOUND';
+			throw e;
+		});
+	}
+	return __webpack_require__.e(ids[1]).then(function() {
+		var id = ids[0];
+		return __webpack_require__(id);
 	});
 }
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
-
-/***/ }),
-
-/***/ "./src/app/about/about.component.html":
-/*!********************************************!*\
-  !*** ./src/app/about/about.component.html ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!--==========================\r\nAbout Us Section\r\n============================-->\r\n<section id=\"about\" class=\"extra-space\">\r\n\r\n    <div class=\"container\">\r\n        <div class=\"about-content text-center\">\r\n            <h2 [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ content.mainH }} </h2>\r\n        </div>\r\n        <div class=\"extra-space\"></div>\r\n        <div class=\"extra-space\"></div>\r\n            \r\n    <div class=\"row\">\r\n\r\n        <div class=\"col-lg-5 col-md-6\">\r\n        <div class=\"about-img\">\r\n            <img src=\"../../assets/img/aboutsombank.jpg\" alt=\"\">\r\n        </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-7 col-md-6\">\r\n        <div class=\"about-content\">\r\n            <h2 [ngClass]=\"{'arabicH4': lang ==='som' || lang ==='arb'}\"> {{ content.heading }} </h2>\r\n            <h3 [ngClass]=\"{'arabicH4': lang ==='som' || lang ==='arb'}\"> {{ content.italicText }} </h3>\r\n            <p [ngClass]=\"{'arabicP': lang ==='som' || lang ==='arb'}\"> {{ content.content1 }} </p>\r\n            <p [ngClass]=\"{'arabicP': lang ==='som' || lang ==='arb'}\"> {{ content.content2 }}</p>\r\n            <!-- <ul>\r\n            <li><i class=\"ion-android-checkmark-circle\"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>\r\n            <li><i class=\"ion-android-checkmark-circle\"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>\r\n            <li><i class=\"ion-android-checkmark-circle\"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>\r\n            </ul> -->\r\n        </div>\r\n        </div>\r\n    </div>\r\n    </div>\r\n\r\n</section>\r\n    \r\n<!-- #about -->\r\n\r\n<!--==========================\r\nPortfolio Section\r\n============================-->\r\n\r\n<section id=\"portfolio\" class=\"section-bg\" style=\"padding-top:2rem\">\r\n    <div class=\"container\">\r\n        <header class=\"section-header\">\r\n        <h3 class=\"section-title\" [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\">{{ content.heading }}</h3>\r\n        </header>\r\n        <!-- \r\n            <div class=\"row\">\r\n                <div class=\"col-lg-12\">\r\n                    <ul id=\"portfolio-flters\">\r\n                    <li data-filter=\"*\" class=\"filter-active\">All</li>\r\n                    <li data-filter=\".filter-app\">App</li>\r\n                    <li data-filter=\".filter-card\">Card</li>\r\n                    <li data-filter=\".filter-web\">Web</li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        -->\r\n        <div class=\"row portfolio-container extra-space\">\r\n            <div class=\"col-6 portfolio-item filter-app\">\r\n                <div class=\"portfolio-wrap\">\r\n                <img src=\"../../assets/img/SomBank 1.jpeg\" class=\"img-fluid\" alt=\"\">\r\n                <div class=\"portfolio-info\">\r\n                    <h4><a href=\"#\">App 1</a></h4>\r\n                    <p>App</p>\r\n                    <div>\r\n                    <a href=\"../../assets/img/SomBank 1.jpeg\" data-lightbox=\"portfolio\" data-title=\"App 1\" class=\"link-preview\" title=\"Preview\"><i class=\"ion ion-eye\"></i></a>\r\n                    <a href=\"#\" class=\"link-details\" title=\"More Details\"><i class=\"ion ion-android-open\"></i></a>\r\n                    </div>\r\n                </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"col-6 portfolio-item filter-card\">\r\n                <div class=\"portfolio-wrap\">\r\n                <img src=\"../../assets/img/SomBank 2.jpeg\" class=\"img-fluid\" alt=\"\">\r\n                <div class=\"portfolio-info\">\r\n                    <h4><a href=\"#\">Card 2</a></h4>\r\n                    <p>Card</p>\r\n                    <div>\r\n                    <a href=\"../../assets/img/SomBank 2.jpeg\" class=\"link-preview\" data-lightbox=\"portfolio\" data-title=\"Card 2\" title=\"Preview\"><i class=\"ion ion-eye\"></i></a>\r\n                    <a href=\"#\" class=\"link-details\" title=\"More Details\"><i class=\"ion ion-android-open\"></i></a>\r\n                    </div>\r\n                </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section> \r\n\r\n<!-- #portfolio -->\r\n\r\n<!--==========================\r\nMap\r\n============================-->\r\n\r\n<section>\r\n    <div class=\"container\" >\r\n        <header class=\"section-header\">\r\n            <h3 [ngClass]=\"{'arabicH3': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.heading }} </h3>\r\n            </header>\r\n        <img src=\"../../assets/img/telocations.gif\" class=\"img-fluid\">\r\n    </div>\r\n</section>\r\n\r\n<!-- #Map -->\r\n\r\n<!--==========================\r\nCounter\r\n============================-->\r\n\r\n<section id=\"why-us\" class=\"wow fadeIn\">\r\n    <div class=\"container\">\r\n        <div class=\"row counters\">\r\n            <div class=\"col-lg-3 col-6 text-center\">\r\n                <span data-toggle=\"counter-up\"  [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.clientsNum }} </span>\r\n                <p [ngClass]=\"{'arabicP-center': lang === 'arb' || lang === 'som'}\"> {{ somGlobalCommunityContent.clients }} </p>\r\n            </div>\r\n\r\n            <div class=\"col-lg-3 col-6 text-center\">\r\n                <span data-toggle=\"counter-up\"  [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.projectsNum }} </span>\r\n                <p [ngClass]=\"{'arabicP-center': lang === 'arb' || lang === 'som'}\"> {{ somGlobalCommunityContent.projects }} </p>\r\n            </div>\r\n\r\n            <div class=\"col-lg-3 col-6 text-center\">\r\n                <span data-toggle=\"counter-up\"  [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.hoursNum }} </span>\r\n                <p [ngClass]=\"{'arabicP-center': lang === 'arb' || lang === 'som'}\"> {{ somGlobalCommunityContent.hours }} </p>\r\n            </div>\r\n\r\n            <div class=\"col-lg-3 col-6 text-center\">\r\n                <span data-toggle=\"counter-up\"  [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.hardworkNum }} </span>\r\n                <p [ngClass]=\"{'arabicP-center': lang === 'arb' || lang === 'som'}\"> {{ somGlobalCommunityContent.hardwork }} </p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n    \r\n<!-- #Counter -->"
-
-/***/ }),
-
-/***/ "./src/app/about/about.component.ts":
-/*!******************************************!*\
-  !*** ./src/app/about/about.component.ts ***!
-  \******************************************/
-/*! exports provided: AboutComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutComponent", function() { return AboutComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_multi_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/multi.service */ "./src/app/shared/multi.service.ts");
-
-
-
-var AboutComponent = /** @class */ (function () {
-    function AboutComponent(multi) {
-        this.multi = multi;
-    }
-    AboutComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.lang = this.multi.lang;
-        this.setContent(this.lang);
-        this.multi.tlang.subscribe(function (lang) {
-            _this.lang = lang;
-            _this.setContent(lang);
-        });
-    };
-    AboutComponent.prototype.setContent = function (lang) {
-        if (lang === 'eng') {
-            this.content = this.multi.aboutus.eng;
-            this.somGlobalCommunityContent = this.multi.sombankcommunity.eng;
-        }
-        else if (lang === 'som') {
-            this.content = this.multi.aboutus.som;
-            this.somGlobalCommunityContent = this.multi.sombankcommunity.som;
-        }
-        else if (lang === 'arb') {
-            this.content = this.multi.aboutus.arb;
-            this.somGlobalCommunityContent = this.multi.sombankcommunity.arb;
-        }
-    };
-    AboutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'about-content',
-            template: __webpack_require__(/*! ./about.component.html */ "./src/app/about/about.component.html")
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_multi_service__WEBPACK_IMPORTED_MODULE_2__["MultiLangService"]])
-    ], AboutComponent);
-    return AboutComponent;
-}());
-
-
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
+module.exports = webpackAsyncContext;
 
 /***/ }),
 
@@ -168,6 +136,49 @@ var AppInstallPopupComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/app-routing.module.ts":
+/*!***************************************!*\
+  !*** ./src/app/app-routing.module.ts ***!
+  \***************************************/
+/*! exports provided: AppRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+var appRoutes = [
+    { path: '', loadChildren: './home/home.module#HomeModule' },
+    { path: 'about-sombank', loadChildren: './about/about.module#AboutModule' },
+    { path: 'sombank-for-businesses', loadChildren: './business/business.module#BusinessHomeModule' },
+    { path: 't-plus-account', loadChildren: './t-plus-account/t-plus-account.module#TPlusAccountModule' },
+    { path: 'sombank-pricing', loadChildren: './pricing/pricing.module#PricingModule' },
+    { path: 'sombank-personal-account', loadChildren: './personal-account/personal-account.module#PersonalAccountModule' },
+    { path: 'sombank-corporate-account', loadChildren: './corporate/corporate.module#CorporateAccountModule' }
+];
+var AppRoutingModule = /** @class */ (function () {
+    function AppRoutingModule() {
+    }
+    AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [
+                _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(appRoutes, { scrollPositionRestoration: 'enabled' })
+            ],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+        })
+    ], AppRoutingModule);
+    return AppRoutingModule;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app.component.css":
 /*!***********************************!*\
   !*** ./src/app/app.component.css ***!
@@ -242,28 +253,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _navigation_header_navigation_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./navigation/header-navigation.component */ "./src/app/navigation/header-navigation.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
-/* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
-/* harmony import */ var _business_business_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./business/business.component */ "./src/app/business/business.component.ts");
-/* harmony import */ var _pricing_pricing_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pricing/pricing.component */ "./src/app/pricing/pricing.component.ts");
-/* harmony import */ var _t_plus_account_t_plus_account_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./t-plus-account/t-plus-account.component */ "./src/app/t-plus-account/t-plus-account.component.ts");
-/* harmony import */ var _corporate_corporate_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./corporate/corporate.component */ "./src/app/corporate/corporate.component.ts");
-/* harmony import */ var _personal_account_personal_account_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./personal-account/personal-account.component */ "./src/app/personal-account/personal-account.component.ts");
-/* harmony import */ var _shared_multi_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./shared/multi.service */ "./src/app/shared/multi.service.ts");
-/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm5/service-worker.js");
-/* harmony import */ var _mobile_nav_mobile_nav_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./mobile-nav/mobile-nav.component */ "./src/app/mobile-nav/mobile-nav.component.ts");
-/* harmony import */ var _shared_faqAdd_pipe__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./shared/faqAdd.pipe */ "./src/app/shared/faqAdd.pipe.ts");
-/* harmony import */ var _popup_popup_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./popup/popup.component */ "./src/app/popup/popup.component.ts");
-/* harmony import */ var _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./privacy/privacy.component */ "./src/app/privacy/privacy.component.ts");
-/* harmony import */ var _app_install_popup_app_install_popup_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./app-install-popup/app-install-popup.component */ "./src/app/app-install-popup/app-install-popup.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _shared_multi_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./shared/multi.service */ "./src/app/shared/multi.service.ts");
+/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm5/service-worker.js");
+/* harmony import */ var _mobile_nav_mobile_nav_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./mobile-nav/mobile-nav.component */ "./src/app/mobile-nav/mobile-nav.component.ts");
+/* harmony import */ var _shared_faqAdd_pipe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./shared/faqAdd.pipe */ "./src/app/shared/faqAdd.pipe.ts");
+/* harmony import */ var _popup_popup_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./popup/popup.component */ "./src/app/popup/popup.component.ts");
+/* harmony import */ var _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./privacy/privacy.component */ "./src/app/privacy/privacy.component.ts");
+/* harmony import */ var _app_install_popup_app_install_popup_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./app-install-popup/app-install-popup.component */ "./src/app/app-install-popup/app-install-popup.component.ts");
 
 
 
@@ -283,22 +287,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
-var appRoutes = [
-    { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_11__["HomeComponent"] },
-    { path: 'about-sombank', component: _about_about_component__WEBPACK_IMPORTED_MODULE_13__["AboutComponent"] },
-    { path: 'sombank-for-businesses', component: _business_business_component__WEBPACK_IMPORTED_MODULE_14__["BusinessHomeComponent"] },
-    { path: 't-plus-account', component: _t_plus_account_t_plus_account_component__WEBPACK_IMPORTED_MODULE_16__["TplusAccountComponent"] },
-    { path: 'sombank-pricing', component: _pricing_pricing_component__WEBPACK_IMPORTED_MODULE_15__["PricingComponent"] },
-    { path: 'sombank-personal-account', component: _personal_account_personal_account_component__WEBPACK_IMPORTED_MODULE_18__["PersonalAccountComponent"] },
-    { path: 'sombank-corporate-account', component: _corporate_corporate_component__WEBPACK_IMPORTED_MODULE_17__["CorporateAccountComponent"] }
-];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -307,177 +295,28 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
                 _navigation_header_navigation_component__WEBPACK_IMPORTED_MODULE_10__["HeaderNavigationComponent"],
-                _mobile_nav_mobile_nav_component__WEBPACK_IMPORTED_MODULE_21__["MobileNavComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_11__["HomeComponent"],
-                _about_about_component__WEBPACK_IMPORTED_MODULE_13__["AboutComponent"],
-                _business_business_component__WEBPACK_IMPORTED_MODULE_14__["BusinessHomeComponent"],
-                _pricing_pricing_component__WEBPACK_IMPORTED_MODULE_15__["PricingComponent"],
-                _t_plus_account_t_plus_account_component__WEBPACK_IMPORTED_MODULE_16__["TplusAccountComponent"],
-                _corporate_corporate_component__WEBPACK_IMPORTED_MODULE_17__["CorporateAccountComponent"],
-                _personal_account_personal_account_component__WEBPACK_IMPORTED_MODULE_18__["PersonalAccountComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_12__["FooterComponent"],
-                _popup_popup_component__WEBPACK_IMPORTED_MODULE_23__["PopupComponent"],
-                _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_24__["PrivacyPolicyComponent"],
-                _app_install_popup_app_install_popup_component__WEBPACK_IMPORTED_MODULE_25__["AppInstallPopupComponent"],
-                _shared_faqAdd_pipe__WEBPACK_IMPORTED_MODULE_22__["FaqAddPipe"]
+                _mobile_nav_mobile_nav_component__WEBPACK_IMPORTED_MODULE_14__["MobileNavComponent"],
+                _footer_footer_component__WEBPACK_IMPORTED_MODULE_11__["FooterComponent"],
+                _popup_popup_component__WEBPACK_IMPORTED_MODULE_16__["PopupComponent"],
+                _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_17__["PrivacyPolicyComponent"],
+                _app_install_popup_app_install_popup_component__WEBPACK_IMPORTED_MODULE_18__["AppInstallPopupComponent"],
+                _shared_faqAdd_pipe__WEBPACK_IMPORTED_MODULE_15__["FaqAddPipe"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_5__["HttpModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__["MatDialogModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(appRoutes, { scrollPositionRestoration: 'enabled' }),
-                _angular_service_worker__WEBPACK_IMPORTED_MODULE_20__["ServiceWorkerModule"].register('ngsw-worker.js', { enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"].production })
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+                _angular_service_worker__WEBPACK_IMPORTED_MODULE_13__["ServiceWorkerModule"].register('ngsw-worker.js', { enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"].production })
             ],
-            providers: [_shared_multi_service__WEBPACK_IMPORTED_MODULE_19__["MultiLangService"]],
+            providers: [_shared_multi_service__WEBPACK_IMPORTED_MODULE_12__["MultiLangService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
-            entryComponents: [_popup_popup_component__WEBPACK_IMPORTED_MODULE_23__["PopupComponent"], _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_24__["PrivacyPolicyComponent"], _app_install_popup_app_install_popup_component__WEBPACK_IMPORTED_MODULE_25__["AppInstallPopupComponent"]]
+            entryComponents: [_popup_popup_component__WEBPACK_IMPORTED_MODULE_16__["PopupComponent"], _privacy_privacy_component__WEBPACK_IMPORTED_MODULE_17__["PrivacyPolicyComponent"], _app_install_popup_app_install_popup_component__WEBPACK_IMPORTED_MODULE_18__["AppInstallPopupComponent"]]
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/business/business.component.html":
-/*!**************************************************!*\
-  !*** ./src/app/business/business.component.html ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!--==========================\r\nIntro Section\r\n============================-->\r\n\r\n<section id=\"intro\" class=\"clearfix\" style=\"background-image:url(../assets/img/bg.png)\">\r\n    <div class=\"container d-flex h-100\" >\r\n        <div class=\"row justify-content-center align-self-center\">\r\n        \r\n        <div class=\"col-md-6 intro-info order-md-first order-last\">\r\n            <h2  [ngClass]=\"{'arabicSH': lang==='som' || lang==='arb'}\" style=\"text-align:center\"> {{ content.heading1 }} <span> {{ content.heading2 }} </span>,<br> {{ content.heading3 }} </h2>\r\n            \r\n                <p  [ngClass]=\"{'arabicP': lang==='som' || lang==='arb'}\"> {{ content.content }}</p>\r\n                <div class=\"form-row justify-content-center\">\r\n                    <div class=\"col-6\">\r\n                        <button type=\"button\" [ngClass]=\"{'arabicH4-center': lang ==='som' || lang ==='arb'}\"  class=\"btn btn-primary form-control\" > {{ content.button }} </button>\r\n                    </div>         \r\n                </div>         \r\n        </div>\r\n    \r\n        <div class=\"col-md-6 intro-info order-md-last order-first\" >\r\n            <div style=\"width:100%; text-align: center; margin: 0px auto\" class=\"justify-content-center\" >\r\n                <h3 style=\"display:inline-block; padding-right: 15px\" [routerLinkActive]=\"'active'\" [routerLinkActiveOptions]=\"{exact: true}\"><a [ngClass]=\"{'arabicH3': lang ==='som' || lang ==='arb'}\" [routerLink]=\"['/']\"  > {{ navMenuActive.personal }} </a></h3>\r\n                <h3 style=\"display:inline-block; padding-left: 15px\" [routerLinkActive]=\"'active'\" ><a [ngClass]=\"{'arabicH3': lang ==='som' || lang ==='arb'}\" [routerLink]=\"['/sombank-for-businesses']\" > {{ navMenuActive.business }} </a></h3>\r\n            </div>\r\n            <img src=\"https://assets.revolut.com/media/business/macbook-9.png\" alt=\"\" class=\"img-fluid\">\r\n        </div>\r\n\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n<!-- #intro -->\r\n\r\n<main id=\"main\">\r\n\r\n    <!--==========================\r\n        Features Section\r\n    ============================-->\r\n\r\n    <section id=\"features\">\r\n        <div class=\"container-fluid\">\r\n\r\n            <div class=\"row feature-item\">\r\n                <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                    <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section1.heading }} </h3>\r\n                    <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                        {{ content.section1.content }}\r\n                    </p>\r\n                </div>\r\n                <div class=\"col-lg-6 wow fadeInUp\">\r\n                    <div class=\"row justify-content-center\">\r\n                        <img src=\"https://assets.revolut.com/media/business/step1-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"row feature-item extra-space\">\r\n                <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                    <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section2.heading }} </h3>\r\n                    <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                        {{ content.section2.content }}\r\n                    </p>\r\n                </div>\r\n\r\n                <div class=\"col-lg-6 wow fadeInUp\">\r\n                    <div class=\"row justify-content-center\">\r\n                        <img src=\"https://assets.revolut.com/media/business/step2-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"row feature-item extra-space\">\r\n                <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                    <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\" > {{ content.section3.heading }} </h3>\r\n                    <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                         {{ content.section3.content }} \r\n                    </p>\r\n                </div>\r\n                <div class=\"col-lg-6 wow fadeInUp\">\r\n                    <div class=\"row justify-content-center\">\r\n                        <img src=\"https://assets.revolut.com/media/business/step3-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"row feature-item extra-space\">\r\n               <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                    <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section4.heading }} </h3>\r\n                    <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                         {{ content.section4.content }} \r\n                    </p>\r\n                </div>\r\n                <div class=\"col-lg-6 wow fadeInUp\">\r\n                    <div class=\"row justify-content-center\">\r\n                            <img src=\"https://assets.revolut.com/media/business/step3-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </section>\r\n            \r\n    <!-- #features -->\r\n\r\n        \r\n        \r\n    <!--==========================\r\n    Master Card Section\r\n    ============================-->\r\n\r\n    <section id=\"pricing\" class=\"wow fadeInUp section-bg\">\r\n\r\n        <div class=\"container\">\r\n            <header class=\"section-header\">\r\n                <h3 [ngClass]=\"{'arabicH3': lang==='som' || lang==='arb'}\"> {{ content.cardscontent.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP': lang==='som' || lang==='arb'}\">{{ content.cardscontent.content }}</p>\r\n                <div class=\"row\">\r\n                    <div class=\"col-6\">\r\n                        <img src=\"../../assets/img/businesscard_black1.png\" class=\"img-fluid\">\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <img src=\"../../assets/img/businesscard_white.png\" class=\"img-fluid\"> \r\n                    </div>\r\n                </div>                \r\n            </header>\r\n        </div>\r\n\r\n    </section>\r\n\r\n    <!-- #master card -->\r\n\r\n<!--==========================\r\n        Services Section\r\n    ============================-->\r\n    <section id=\"services\" >\r\n        <div class=\"container\">\r\n\r\n        <header class=\"section-header\">\r\n            <h3 [ngClass]=\"{'arabicH3': lang==='som' || lang==='arb'}\"> {{ content.services.heading }} </h3>\r\n            <p [ngClass]=\"{'arabicP': lang==='som' || lang==='arb'}\"> {{ content.services.content }} </p>\r\n        </header>\r\n\r\n        <div class=\"row\">\r\n\r\n            <div class=\"col-md-6 col-lg-4 wow bounceInUp\" data-wow-duration=\"1.4s\">\r\n            <div class=\"box\">\r\n                <div class=\"icon\" style=\"background: #fceef3;\"><i class=\"ion-ios-analytics-outline\" style=\"color: #ff689b;\"></i></div>\r\n                <h4 class=\"title\" [ngClass]=\"{'arabicH6-center':lang === 'arb' || lang === 'som' }\"> {{ content.services.service1.heading }} </h4>\r\n                <p class=\"description\" [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\"> {{ content.services.service1.content }} </p>\r\n            </div>\r\n            </div>\r\n            <div class=\"col-md-6 col-lg-4 wow bounceInUp\" data-wow-duration=\"1.4s\">\r\n            <div class=\"box\">\r\n                <div class=\"icon\" style=\"background: #fff0da;\"><i class=\"ion-ios-bookmarks-outline\" style=\"color: #e98e06;\"></i></div>\r\n                <h4 class=\"title\" [ngClass]=\"{'arabicH6-center':lang === 'arb' || lang === 'som' }\">  {{ content.services.service2.heading }}  </h4>\r\n                <p class=\"description\" [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\"> {{ content.services.service2.content }} </p>\r\n            </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-6 col-lg-4 wow bounceInUp\" data-wow-delay=\"0.1s\" data-wow-duration=\"1.4s\">\r\n            <div class=\"box\">\r\n                <div class=\"icon\" style=\"background: #e6fdfc;\"><i class=\"ion-ios-paper-outline\" style=\"color: #3fcdc7;\"></i></div>\r\n                <h4 class=\"title\" [ngClass]=\"{'arabicH6-center':lang === 'arb' || lang === 'som' }\">  {{ content.services.service3.heading }}  </h4>\r\n                <p class=\"description\" [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\"> {{ content.services.service3.content }} </p>\r\n            </div>\r\n            </div>\r\n            <div class=\"col-md-6 col-lg-4 wow bounceInUp\" data-wow-delay=\"0.1s\" data-wow-duration=\"1.4s\">\r\n            <div class=\"box\">\r\n                <div class=\"icon\" style=\"background: #eafde7;\"><i class=\"ion-ios-speedometer-outline\" style=\"color:#41cf2e;\"></i></div>\r\n                <h4 class=\"title\" [ngClass]=\"{'arabicH6-center':lang === 'arb' || lang === 'som' }\">  {{ content.services.service4.heading }}  </h4>\r\n                <p class=\"description\" [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\"> {{ content.services.service4.content }} </p>\r\n            </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-6 col-lg-4 wow bounceInUp\" data-wow-delay=\"0.2s\" data-wow-duration=\"1.4s\">\r\n            <div class=\"box\">\r\n                <div class=\"icon\" style=\"background: #e1eeff;\"><i class=\"ion-ios-world-outline\" style=\"color: #2282ff;\"></i></div>\r\n                <h4 class=\"title\" [ngClass]=\"{'arabicH6-center':lang === 'arb' || lang === 'som' }\">  {{ content.services.service5.heading }}  </h4>\r\n                <p class=\"description\" [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\"> {{ content.services.service5.content }} </p>\r\n            </div>\r\n            </div>\r\n            <div class=\"col-md-6 col-lg-4 wow bounceInUp\" data-wow-delay=\"0.2s\" data-wow-duration=\"1.4s\">\r\n            <div class=\"box\">\r\n                <div class=\"icon\" style=\"background: #ecebff;\"><i class=\"ion-ios-clock-outline\" style=\"color: #8660fe;\"></i></div>\r\n                <h4 class=\"title\" [ngClass]=\"{'arabicH6-center':lang === 'arb' || lang === 'som' }\"> {{ content.services.service6.heading }} </h4>\r\n                <p class=\"description\" [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">{{ content.services.service6.content }}</p>\r\n            </div>\r\n            </div>\r\n\r\n        </div>\r\n\r\n        </div>\r\n    </section>\r\n\r\n    <!-- #services -->\r\n\r\n     <!--==========================\r\n    Map\r\n    ============================-->\r\n\r\n    <section>\r\n        <div class=\"container\" >\r\n            <header class=\"section-header\">\r\n                <h3 [ngClass]=\"{'arabicH3': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.heading }} </h3>\r\n                </header>\r\n            <img src=\"../../assets/img/telocations.gif\" class=\"img-fluid\">\r\n        </div>\r\n    </section>\r\n\r\n    <!-- #Map -->\r\n\r\n    <!--==========================\r\n    Counter\r\n    ============================-->\r\n\r\n    <section id=\"why-us\" class=\"wow fadeIn\">\r\n        <div class=\"container\">\r\n            <div class=\"row counters\">\r\n                <div class=\"col-lg-3 col-6 text-center\">\r\n                    <span data-toggle=\"counter-up\"  [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.clientsNum }} </span>\r\n                    <p [ngClass]=\"{'arabicP-center': lang === 'arb' || lang === 'som'}\"> {{ somGlobalCommunityContent.clients }} </p>\r\n                </div>\r\n\r\n                <div class=\"col-lg-3 col-6 text-center\">\r\n                    <span data-toggle=\"counter-up\"  [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.projectsNum }} </span>\r\n                    <p [ngClass]=\"{'arabicP-center': lang === 'arb' || lang === 'som'}\"> {{ somGlobalCommunityContent.projects }} </p>\r\n                </div>\r\n\r\n                <div class=\"col-lg-3 col-6 text-center\">\r\n                    <span data-toggle=\"counter-up\"  [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.hoursNum }} </span>\r\n                    <p [ngClass]=\"{'arabicP-center': lang === 'arb' || lang === 'som'}\"> {{ somGlobalCommunityContent.hours }} </p>\r\n                </div>\r\n\r\n                <div class=\"col-lg-3 col-6 text-center\">\r\n                    <span data-toggle=\"counter-up\"  [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.hardworkNum }} </span>\r\n                    <p [ngClass]=\"{'arabicP-center': lang === 'arb' || lang === 'som'}\"> {{ somGlobalCommunityContent.hardwork }} </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </section>\r\n        \r\n    <!-- #Counter -->\r\n\r\n    <!--==========================\r\n    Frequently Asked Questions Section\r\n    ============================-->\r\n\r\n    <section id=\"faq\" class=\"wow fadeInUp section-bg\">\r\n        <div class=\"container\">\r\n            <header class=\"section-header\">\r\n            <h3 [ngClass]=\"{'arabicH3': lang ==='som' || lang ==='arb'}\"> {{ faqContent.heading }} </h3>\r\n            <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\" > {{ faqContent.content }} </p>\r\n            </header>\r\n\r\n            <ul id=\"faq-list\" class=\"wow fadeInUp\">\r\n                <li *ngFor=\"let section of faqContent.questions; let i = index \">\r\n                    <a data-toggle=\"collapse\" class=\"collapsed\" href=\"{{ '#faq' + i }} \" [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\" > {{ section.q }} <i class=\"ion-android-remove\"></i></a>\r\n                    <div id=\"{{ 'faq' + i }}\" class=\"collapse\" data-parent=\"#faq-list\">\r\n                    <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\" >\r\n                        {{ section.a }}\r\n                    </p>\r\n                    </div>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </section>\r\n        \r\n    <!-- #faq -->\r\n</main>"
-
-/***/ }),
-
-/***/ "./src/app/business/business.component.ts":
-/*!************************************************!*\
-  !*** ./src/app/business/business.component.ts ***!
-  \************************************************/
-/*! exports provided: BusinessHomeComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BusinessHomeComponent", function() { return BusinessHomeComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_multi_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/multi.service */ "./src/app/shared/multi.service.ts");
-
-
-
-var BusinessHomeComponent = /** @class */ (function () {
-    function BusinessHomeComponent(multi) {
-        this.multi = multi;
-    }
-    BusinessHomeComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.lang = this.multi.lang;
-        this.getContent(this.lang);
-        this.multi.tlang.subscribe(function (lang) {
-            _this.lang = lang;
-            _this.getContent(lang);
-        });
-    };
-    BusinessHomeComponent.prototype.getContent = function (lang) {
-        if (lang === 'eng') {
-            this.content = this.multi.businessPageContent.eng;
-            this.navMenuActive = this.multi.navMenu.eng;
-            this.faqContent = this.multi.faq.eng;
-            this.somGlobalCommunityContent = this.multi.sombankcommunity.eng;
-        }
-        else if (lang === 'som') {
-            this.content = this.multi.businessPageContent.som;
-            this.navMenuActive = this.multi.navMenu.som;
-            this.faqContent = this.multi.faq.som;
-            this.somGlobalCommunityContent = this.multi.sombankcommunity.som;
-        }
-        else if (lang === 'arb') {
-            this.content = this.multi.businessPageContent.arb;
-            this.navMenuActive = this.multi.navMenu.arb;
-            this.faqContent = this.multi.faq.arb;
-            this.somGlobalCommunityContent = this.multi.sombankcommunity.arb;
-        }
-    };
-    BusinessHomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'business-content',
-            template: __webpack_require__(/*! ./business.component.html */ "./src/app/business/business.component.html")
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_multi_service__WEBPACK_IMPORTED_MODULE_2__["MultiLangService"]])
-    ], BusinessHomeComponent);
-    return BusinessHomeComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/corporate/corporate.component.html":
-/*!****************************************************!*\
-  !*** ./src/app/corporate/corporate.component.html ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!--==========================\r\nIntro Section\r\n============================-->\r\n\r\n<section id=\"intro\" class=\"clearfix\" style=\"background-image:url(../assets/img/bg.png)\">\r\n    <div class=\"container d-flex h-100\">\r\n        <div class=\"row justify-content-center align-self-center extra-space\">\r\n        \r\n        <div class=\"col-md-6 intro-info order-md-first order-last align-self-center\">\r\n            <h2 [ngClass]=\"{'arabicSH': lang==='som' || lang==='arb'}\">{{ content.heading1 }}<br> <span>{{ content.heading2 }}</span> <br> {{ content.heading3 }}</h2>\r\n            \r\n            <form (ngSubmit)=\"onSubmit(f)\" #f=\"ngForm\">\r\n                <div >\r\n                    <div class=\"form-row justify-content-center\">\r\n                        <div class=\"col-9\">\r\n                            <input type=\"email\" class=\"form-control custom-remove-border\" [ngClass]=\"{'custom-form-control':lang==='som' || lang==='arb'}\" maxlength=\"50\" placeholder=\"email@test.com\" name=\"email\" required email ngModel #email=\"ngModel\">\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"form-row justify-content-center\">\r\n                        <div class=\"col-3\">\r\n                            <select class=\"custom-select mr-sm-2 custom-remove-border\" name=\"ext\" [ngModel]=\"'+252'\" required #ext=\"ngModel\">\r\n                                <option value=\"+91\">+91</option>\r\n                                <option value=\"+252\">+252</option>\r\n                                <option value=\"+1\">+1</option> \r\n                                <option value=\"+6\">+6</option>\r\n                            </select>\r\n                        </div>\r\n                        <div class=\"col-6\">\r\n                            <input type=\"number\" class=\"form-control custom-remove-border\" [ngClass]=\"{'custom-form-control':lang==='som' || lang==='arb'}\" placeholder=\"Mobile Number\" name=\"cell\" required ngModel #cell=\"ngModel\">\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"form-row justify-content-center\">\r\n                        <div class=\"col-6\">\r\n                    <button type=\"submit\" [ngClass]=\"{'arabicH4-center': lang ==='som' || lang ==='arb'}\" class=\"btn btn-primary form-control\" [disabled]=\"f.invalid\"> {{ content.button }} </button>\r\n                    </div></div>\r\n                </div>\r\n            </form>               \r\n        </div>\r\n    \r\n        <div class=\"col-md-6 intro-info order-md-last order-first\">\r\n            <div class=\"row justify-content-center\">\r\n                <img src=\"../../assets/img/slider-t-plus-anim.gif\" alt=\"\" class=\"custom-img-fluid img-fluid\">\r\n            </div>\r\n        </div>\r\n\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n<!-- #intro -->\r\n\r\n<main id=\"main\">\r\n\r\n<!--==========================\r\n    Features Section\r\n============================-->\r\n\r\n<section id=\"features\">\r\n    <div class=\"container-fluid\">\r\n\r\n        <div class=\"row feature-item\">\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section1.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                    {{ content.section1.content }}\r\n                </p>\r\n            </div>\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"https://assets.revolut.com/media/business/step1-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row feature-item extra-space\">\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section2.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                    {{ content.section2.content }}\r\n                </p>\r\n            </div>\r\n\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"https://assets.revolut.com/media/business/step2-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row feature-item extra-space\">\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\" > {{ content.section3.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                        {{ content.section3.content }} \r\n                </p>\r\n            </div>\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"https://assets.revolut.com/media/business/step3-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row feature-item extra-space\">\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section4.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                        {{ content.section4.content }} \r\n                </p>\r\n            </div>\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                        <img src=\"https://assets.revolut.com/media/business/step3-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</section>\r\n        \r\n<!-- #features -->\r\n\r\n</main>"
-
-/***/ }),
-
-/***/ "./src/app/corporate/corporate.component.ts":
-/*!**************************************************!*\
-  !*** ./src/app/corporate/corporate.component.ts ***!
-  \**************************************************/
-/*! exports provided: CorporateAccountComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CorporateAccountComponent", function() { return CorporateAccountComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_multi_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/multi.service */ "./src/app/shared/multi.service.ts");
-
-
-
-var CorporateAccountComponent = /** @class */ (function () {
-    function CorporateAccountComponent(multi) {
-        this.multi = multi;
-    }
-    CorporateAccountComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.lang = this.multi.lang;
-        this.getContent(this.lang);
-        this.multi.tlang.subscribe(function (lang) {
-            _this.lang = lang;
-            _this.getContent(lang);
-        });
-    };
-    CorporateAccountComponent.prototype.getContent = function (lang) {
-        if (lang === 'eng') {
-            this.content = this.multi.corporatePageContent.eng;
-        }
-        else if (lang === 'som') {
-            this.content = this.multi.corporatePageContent.som;
-        }
-        else if (lang === 'arb') {
-            this.content = this.multi.corporatePageContent.arb;
-        }
-    };
-    CorporateAccountComponent.prototype.onSubmit = function (f) {
-        this.multi.onSubmit(f, this.lang);
-    };
-    CorporateAccountComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'corporate',
-            template: __webpack_require__(/*! ./corporate.component.html */ "./src/app/corporate/corporate.component.html")
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_multi_service__WEBPACK_IMPORTED_MODULE_2__["MultiLangService"]])
-    ], CorporateAccountComponent);
-    return CorporateAccountComponent;
 }());
 
 
@@ -546,143 +385,6 @@ var FooterComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_multi_service__WEBPACK_IMPORTED_MODULE_2__["MultiLangService"]])
     ], FooterComponent);
     return FooterComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/home/home.component.html":
-/*!******************************************!*\
-  !*** ./src/app/home/home.component.html ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!--==========================\r\nIntro Section\r\n============================-->\r\n\r\n<section id=\"intro\" class=\"clearfix\">\r\n    <br>    \r\n    <div class=\"container-fluid d-flex h-100 justify-content-center\">\r\n        <div class=\"row align-self-center\">\r\n            <div class=\"col-md-6 intro-info order-md-first order-last justify-content-center\">\r\n                <!-- <nav class=\"main-nav justify-content-center align-self-center\" >\r\n                    <ul>\r\n                        <li [routerLinkActive]=\"'active'\" [routerLinkActiveOptions]=\"{exact: true}\"><a [ngClass]=\"{'arabicNavH': lang==='som' || lang==='arb'}\" [routerLink]=\"['/']\"  > {{ navMenuActive.personal }} </a></li>\r\n                        <li [routerLinkActive]=\"'active'\" ><a [ngClass]=\"{'arabicNavH': lang==='som' || lang==='arb'}\" [routerLink]=\"['/sombank-for-businesses']\" > {{ navMenuActive.business }} </a></li>\r\n                    </ul>\r\n                </nav> -->\r\n                <!-- <div style=\"width:100%; text-align: center; margin: 0px auto\" class=\"justify-content-center\" >\r\n                    <h3 style=\"display:inline-block; padding-right: 15px\" [routerLinkActive]=\"'active'\" [routerLinkActiveOptions]=\"{exact: true}\"><a [ngClass]=\"{'arabicNavH': lang==='som' || lang==='arb'}\" [routerLink]=\"['/']\"  > {{ navMenuActive.personal }} </a></h3>\r\n                    <h3 style=\"display:inline-block; padding-left: 15px\" [routerLinkActive]=\"'active'\" ><a [ngClass]=\"{'arabicNavH': lang==='som' || lang==='arb'}\" [routerLink]=\"['/sombank-for-businesses']\" > {{ navMenuActive.business }} </a></h3>\r\n                </div>\r\n                <br> -->                \r\n                <h2 [ngClass]=\"{'arabicSH': lang==='som' || lang==='arb'}\" style=\"text-align:center\"> \r\n                    {{ content.heading }} <span> {{ country }} </span>\r\n                </h2>\r\n                <br>\r\n                <br>\r\n                <br>\r\n                <form (ngSubmit)=\"onSubmit(f)\" #f=\"ngForm\">\r\n                    <div >\r\n                        <div class=\"form-row justify-content-center\">\r\n                            <div class=\"col-9\">\r\n                                <input type=\"email\" class=\"form-control custom-remove-border\" [ngClass]=\"{'custom-form-control':lang==='som' || lang==='arb'}\" maxlength=\"50\" placeholder=\"email@test.com\" name=\"email\" required email ngModel #email=\"ngModel\">\r\n                            </div>\r\n                        </div>\r\n                        <br>\r\n                        <div class=\"form-row justify-content-center\">\r\n                            <div class=\"col-3\">\r\n                                <select class=\"custom-select mr-sm-2 custom-remove-border\" name=\"ext\" [ngModel]=\"'+252'\" required #ext=\"ngModel\">\r\n                                    <option value=\"+91\">+91</option>\r\n                                    <option value=\"+252\">+252</option>\r\n                                    <option value=\"+1\">+1</option> \r\n                                    <option value=\"+6\">+6</option>\r\n                                </select>\r\n                            </div>\r\n                            <div class=\"col-6\">\r\n                                <input type=\"number\" class=\"form-control custom-remove-border\" [ngClass]=\"{'custom-form-control':lang==='som' || lang==='arb'}\" placeholder=\"Mobile Number\" name=\"cell\" required ngModel #cell=\"ngModel\">\r\n                            </div>\r\n                        </div>\r\n                        <br>\r\n                        <div class=\"form-row justify-content-center\">\r\n                            <div class=\"col-6\">\r\n                        <button type=\"submit\" [ngClass]=\"{'arabicH4-center': lang ==='som' || lang ==='arb'}\" class=\"btn btn-primary form-control\" [disabled]=\"f.invalid\"> {{ content.button }} </button>\r\n                        </div></div>\r\n                    </div>\r\n                </form>            \r\n            </div>\r\n        \r\n            <div class=\"col-md-6 intro-info order-md-last order-first justify-content-center\">\r\n            \r\n                <div style=\"width:100%; text-align: center; margin: 0px auto\" class=\"justify-content-center\" >\r\n                    <h3 style=\"display:inline-block; padding-right: 15px\" [routerLinkActive]=\"'active'\" [routerLinkActiveOptions]=\"{exact: true}\"><a [ngClass]=\"{'arabicH3': lang ==='som' || lang ==='arb'}\" [routerLink]=\"['/']\"  > {{ navMenuActive.personal }} </a></h3>\r\n                    <h3 style=\"display:inline-block; padding-left: 15px\" [routerLinkActive]=\"'active'\" ><a [ngClass]=\"{'arabicH3': lang ==='som' || lang ==='arb'}\" [routerLink]=\"['/sombank-for-businesses']\" > {{ navMenuActive.business }} </a></h3>\r\n                </div>\r\n                <br>\r\n                \r\n                   <!--  <img src=\"../assets/img/camel4.gif\" alt=\"\" class=\"img-fluid\"> -->\r\n                   <!-- <div class=\"custom-img-background justify-content-center\"> -->\r\n                   <div class=\"row justify-content-center\">\r\n                        <div class=\"justify-content-center\">\r\n                            <img style=\"border-radius: 50%\" class=\"img-fluid align-self-center\" src=\"../assets/camel.gif\" alt=\"\" class=\"img-fluid\">\r\n                            <!-- <video class=\"img-fluid align-self-center\" autoplay loop style=\"border-radius: 50%\">\r\n                                <source src=\"../assets/camel.gif\" type=\"video/mp4\">\r\n                                Your browser does not support the video tag.\r\n                            </video> -->\r\n                        </div>\r\n                   </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</section>\r\n\r\n<!-- #intro -->\r\n\r\n<main id=\"main\">\r\n\r\n    <!--==========================\r\n        Features Section\r\n    ============================-->\r\n\r\n    <section id=\"features\">\r\n        <div class=\"container\">\r\n            <div class=\"row feature-item\">\r\n            <div class=\"col-lg-6 wow fadeInUp\" [ngClass]=\"{'order-1':true}\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"../../assets/img/slider-t-plus-anim.gif\" class=\"img-fluid custom-img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0\" [ngClass]=\"{'order-12':true}\">\r\n                <h4 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section1.heading }} </h4>\r\n                <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section1.subheading1 }} </h6>\r\n                <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                    {{ content.section1.subheading1Cont }}\r\n                </p>\r\n                <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section1.subheading2 }} </h6>\r\n                <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                    {{ content.section1.subheading2Cont }}\r\n                </p>\r\n                <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section1.subheading3 }} </h6>\r\n                <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                    {{ content.section1.subheading3Cont }}\r\n                </p>\r\n                <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section1.subheading4 }} </h6>\r\n                <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                    {{ content.section1.subheading4Cont }}\r\n                </p>\r\n            </div>\r\n            </div>\r\n\r\n            <div class=\"row feature-item mt-5 pt-5\">\r\n            <div class=\"col-lg-6 wow fadeInUp order-1 order-lg-2\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"../../assets/img/slider-t-plus-anim.gif\" class=\"img-fluid custom-img-fluid\" alt=\"\" >\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1\">\r\n                <h4 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section2.heading }} </h4>\r\n                <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section2.subheading1 }} </h6>\r\n                <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                    {{ content.section2.subheading1Cont }}\r\n                </p>\r\n                <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section2.subheading2 }} </h6>\r\n                <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                    {{ content.section2.subheading2Cont }}\r\n                </p>\r\n                <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section2.subheading3 }} </h6>\r\n                <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                    {{ content.section2.subheading3Cont }}\r\n                </p>\r\n            </div>\r\n            </div>\r\n\r\n            <div class=\"row feature-item\">\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"../../assets/img/slider-t-plus-anim.gif\" class=\"img-fluid custom-img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0\">\r\n                <h4 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section3.heading }} </h4>\r\n                <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section3.subheading1 }} </h6>\r\n                <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                    {{ content.section3.subheading1Cont }}\r\n                </p>\r\n                <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section3.subheading2 }} </h6>\r\n                <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                    {{ content.section3.subheading2Cont }}\r\n                </p>\r\n                <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section3.subheading3 }} </h6>\r\n                <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                    {{ content.section3.subheading3Cont }}\r\n                </p>\r\n            </div>\r\n            </div>\r\n\r\n            <div class=\"row feature-item\">\r\n                <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0\">\r\n                    <h4 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section4.heading }} </h4>\r\n                    <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section4.subheading1 }} </h6>\r\n                    <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                        {{ content.section4.subheading1Cont }}\r\n                    </p>\r\n                    <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section4.subheading2 }} </h6>\r\n                    <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                        {{ content.section4.subheading2Cont }}\r\n                    </p>\r\n                    <h6 [ngClass]=\"{'arabicH6':lang === 'arb' || lang === 'som' }\"> {{ content.section4.subheading3 }} </h6>\r\n                    <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\">\r\n                        {{ content.section4.subheading3Cont }}\r\n                    </p>\r\n                </div>\r\n                <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"../../assets/img/slider-t-plus-anim.gif\" class=\"custom-img-fluid img-fluid\" alt=\"\">\r\n                </div>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </section>\r\n            \r\n    <!-- #features -->\r\n\r\n        \r\n        \r\n    <!--==========================\r\n    Pricing Section\r\n    ============================-->\r\n\r\n    <section id=\"pricing\" class=\"wow fadeInUp section-bg\">\r\n\r\n        <div class=\"container\">\r\n\r\n            <header class=\"section-header\">\r\n            <h3 [ngClass]=\"{'arabicH4-center': lang === 'arb' || lang === 'som'}\"> {{ pricingContent.heading }} </h3>\r\n            <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\"> {{ pricingContent.content }} </p>\r\n            </header>\r\n\r\n            <div class=\"row flex-items-xs-middle flex-items-xs-center\">\r\n        \r\n            <!-- Basic Plan  -->\r\n            <div class=\"col-xs-12 col-lg-4\">\r\n                <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <h4 [ngClass]=\"{'arabicH4-center':lang === 'arb' || lang === 'som' }\"> {{ pricingContent.standerd.heading }} </h4>\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <h6 class=\"card-title\">\r\n                        <span class=\"currency\" [ngClass]=\"{'arabicH4-center':lang === 'arb' || lang === 'som' }\">$</span>0<span class=\"period\">/ {{ pricingContent.standerd.pricing }} </span> \r\n                    </h6>\r\n                    <ul class=\"list-group custom-align-left\">\r\n                    <li class=\"list-group-item\" *ngFor=\"let item of pricingContent.standerd.features\" [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\"><i class=\"fa fa-check\"></i> {{ item }} </li>\r\n                    <!-- \r\n                    <li class=\"list-group-item\"><i class=\"fa fa-check\"></i>  Free Euro IBAN account</li>\r\n                    <li class=\"list-group-item\"><i class=\"fa fa-check\"></i>  Spend in over 150 currencies at the interbank exchange rate</li>\r\n                    <li class=\"list-group-item\"><i class=\"fa fa-check\"></i>  No fee exchange in 29 fiat currencies up to £5,000 per month</li> -->\r\n                    </ul>\r\n                    <a href=\"#\" class=\"btn\"> {{ pricingContent.standerd.button }} </a>\r\n                </div>\r\n                </div>\r\n            </div>\r\n        \r\n            <!-- Regular Plan  -->\r\n            <div class=\"col-xs-12 col-lg-4\">\r\n                <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <h4 [ngClass]=\"{'arabicH4-center':lang === 'arb' || lang === 'som' }\">{{ pricingContent.premium.heading }}</h4>\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <h6 class=\"card-title\"> \r\n                        <span class=\"currency\" [ngClass]=\"{'arabicH4-center':lang === 'arb' || lang === 'som' }\">$</span>29<span class=\"period\">/ {{ pricingContent.premium.pricing }} </span>\r\n                    </h6>\r\n                    <ul class=\"list-group custom-align-left\">\r\n                    <li class=\"list-group-item\" *ngFor=\"let item of pricingContent.premium.features\" [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\"><i class=\"fa fa-check\"></i> {{ item }} </li>\r\n                    </ul>\r\n                    <a href=\"#\" class=\"btn\">{{ pricingContent.premium.button }}</a>\r\n                </div>\r\n                </div>\r\n            </div>\r\n        \r\n            <!-- Premium Plan  -->\r\n            <div class=\"col-xs-12 col-lg-4\">\r\n                <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <h4 [ngClass]=\"{'arabicH4-center':lang === 'arb' || lang === 'som' }\">{{ pricingContent.gold.heading }}</h4>\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <h6 class=\"card-title\"> \r\n                        <span class=\"currency\" [ngClass]=\"{'arabicH4-center':lang === 'arb' || lang === 'som' }\">$</span>39<span class=\"period\">/ {{ pricingContent.gold.pricing }} </span>\r\n                    </h6>\r\n                    <ul class=\"list-group custom-align-left\">\r\n                        <li class=\"list-group-item\" *ngFor=\"let item of pricingContent.gold.features\" [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\"><i class=\"fa fa-check\"></i> {{ item }} </li>\r\n                    </ul>\r\n                    <a href=\"#\" class=\"btn\">{{ pricingContent.gold.button }}</a>\r\n                </div>\r\n                </div>\r\n            </div>\r\n        \r\n            </div>\r\n        </div>\r\n\r\n    </section>\r\n\r\n    <!-- #pricing -->\r\n\r\n    <!--==========================\r\n    Frequently Asked Questions Section\r\n    ============================-->\r\n\r\n    <section id=\"faq\">\r\n        <div class=\"container\">\r\n            <header class=\"section-header\">\r\n            <h3 [ngClass]=\"{'arabicH3': lang ==='som' || lang ==='arb'}\"> {{ faqContent.heading }} </h3>\r\n            <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\" > {{ faqContent.content }} </p>\r\n            </header>\r\n\r\n            <ul id=\"faq-list\" class=\"wow fadeInUp\">\r\n                <li *ngFor=\"let section of faqContent.questions; let i = index \">\r\n                    <a data-toggle=\"collapse\" class=\"collapsed\" href=\"{{ '#faq' + i }} \" [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\" > {{ section.q }} <i class=\"ion-android-remove\"></i></a>\r\n                    <div id=\"{{ 'faq' + i }}\" class=\"collapse\" data-parent=\"#faq-list\">\r\n                    <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\" >\r\n                        {{ section.a }}\r\n                    </p>\r\n                    </div>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </section>\r\n        \r\n    <!-- #faq -->\r\n\r\n    <!--==========================\r\n    Map\r\n    ============================-->\r\n\r\n    <section>\r\n        <div class=\"container\" >\r\n            <header class=\"section-header\">\r\n                <h3 [ngClass]=\"{'arabicH3': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.heading }} </h3>\r\n                </header>\r\n            <img src=\"../../assets/img/telocations.gif\" class=\"img-fluid\">\r\n        </div>\r\n    </section>\r\n\r\n    <!-- #Map -->\r\n\r\n    <!--==========================\r\n    Counter\r\n    ============================-->\r\n\r\n    <section id=\"why-us\" class=\"wow fadeIn\">\r\n        <div class=\"container\">\r\n            <div class=\"row counters\">\r\n                <div class=\"col-lg-3 col-6 text-center\">\r\n                    <span data-toggle=\"counter-up\"  [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.clientsNum }} </span>\r\n                    <p [ngClass]=\"{'arabicP-center': lang === 'arb' || lang === 'som'}\"> {{ somGlobalCommunityContent.clients }} </p>\r\n                </div>\r\n\r\n                <div class=\"col-lg-3 col-6 text-center\">\r\n                    <span data-toggle=\"counter-up\"  [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.projectsNum }} </span>\r\n                    <p [ngClass]=\"{'arabicP-center': lang === 'arb' || lang === 'som'}\"> {{ somGlobalCommunityContent.projects }} </p>\r\n                </div>\r\n\r\n                <div class=\"col-lg-3 col-6 text-center\">\r\n                    <span data-toggle=\"counter-up\"  [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.hoursNum }} </span>\r\n                    <p [ngClass]=\"{'arabicP-center': lang === 'arb' || lang === 'som'}\"> {{ somGlobalCommunityContent.hours }} </p>\r\n                </div>\r\n\r\n                <div class=\"col-lg-3 col-6 text-center\">\r\n                    <span data-toggle=\"counter-up\"  [ngClass]=\"{'arabicH3-center': lang ==='som' || lang ==='arb'}\"> {{ somGlobalCommunityContent.hardworkNum }} </span>\r\n                    <p [ngClass]=\"{'arabicP-center': lang === 'arb' || lang === 'som'}\"> {{ somGlobalCommunityContent.hardwork }} </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </section>\r\n        \r\n    <!-- #Counter -->\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    <!--==========================\r\n    About Us Section\r\n    ============================-->\r\n        <!-- <section id=\"about\">\r\n\r\n        <div class=\"container\">\r\n        <div class=\"row\">\r\n\r\n            <div class=\"col-lg-5 col-md-6\">\r\n            <div class=\"about-img\">\r\n                <img src=\"../assets/img/about-img.jpg\" alt=\"\">\r\n            </div>\r\n            </div>\r\n\r\n            <div class=\"col-lg-7 col-md-6\">\r\n            <div class=\"about-content\">\r\n                <h2>About Us</h2>\r\n                <h3>Odio sed id eos et laboriosam consequatur eos earum soluta.</h3>\r\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n                <p>Aut dolor id. Sint aliquam consequatur ex ex labore. Et quis qui dolor nulla dolores neque. Aspernatur consectetur omnis numquam quaerat. Sed fugiat nisi. Officiis veniam molestiae. Et vel ut quidem alias veritatis repudiandae ut fugit. Est ut eligendi aspernatur nulla voluptates veniam iusto vel quisquam. Fugit ut maxime incidunt accusantium totam repellendus eum error. Et repudiandae eum iste qui et ut ab alias.</p>\r\n                <ul>\r\n                <li><i class=\"ion-android-checkmark-circle\"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>\r\n                <li><i class=\"ion-android-checkmark-circle\"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>\r\n                <li><i class=\"ion-android-checkmark-circle\"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>\r\n                </ul>\r\n            </div>\r\n            </div>\r\n        </div>\r\n        </div>\r\n\r\n    </section>\r\n        -->\r\n    <!-- #about -->\r\n\r\n\r\n    <!--==========================\r\n        Services Section\r\n    ============================-->\r\n    <!-- <section id=\"services\" class=\"section-bg\">\r\n        <div class=\"container\">\r\n\r\n        <header class=\"section-header\">\r\n            <h3>Services</h3>\r\n            <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>\r\n        </header>\r\n\r\n        <div class=\"row\">\r\n\r\n            <div class=\"col-md-6 col-lg-4 wow bounceInUp\" data-wow-duration=\"1.4s\">\r\n            <div class=\"box\">\r\n                <div class=\"icon\" style=\"background: #fceef3;\"><i class=\"ion-ios-analytics-outline\" style=\"color: #ff689b;\"></i></div>\r\n                <h4 class=\"title\"><a href=\"\">Lorem Ipsum</a></h4>\r\n                <p class=\"description\">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>\r\n            </div>\r\n            </div>\r\n            <div class=\"col-md-6 col-lg-4 wow bounceInUp\" data-wow-duration=\"1.4s\">\r\n            <div class=\"box\">\r\n                <div class=\"icon\" style=\"background: #fff0da;\"><i class=\"ion-ios-bookmarks-outline\" style=\"color: #e98e06;\"></i></div>\r\n                <h4 class=\"title\"><a href=\"\">Dolor Sitema</a></h4>\r\n                <p class=\"description\">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>\r\n            </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-6 col-lg-4 wow bounceInUp\" data-wow-delay=\"0.1s\" data-wow-duration=\"1.4s\">\r\n            <div class=\"box\">\r\n                <div class=\"icon\" style=\"background: #e6fdfc;\"><i class=\"ion-ios-paper-outline\" style=\"color: #3fcdc7;\"></i></div>\r\n                <h4 class=\"title\"><a href=\"\">Sed ut perspiciatis</a></h4>\r\n                <p class=\"description\">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>\r\n            </div>\r\n            </div>\r\n            <div class=\"col-md-6 col-lg-4 wow bounceInUp\" data-wow-delay=\"0.1s\" data-wow-duration=\"1.4s\">\r\n            <div class=\"box\">\r\n                <div class=\"icon\" style=\"background: #eafde7;\"><i class=\"ion-ios-speedometer-outline\" style=\"color:#41cf2e;\"></i></div>\r\n                <h4 class=\"title\"><a href=\"\">Magni Dolores</a></h4>\r\n                <p class=\"description\">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>\r\n            </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-6 col-lg-4 wow bounceInUp\" data-wow-delay=\"0.2s\" data-wow-duration=\"1.4s\">\r\n            <div class=\"box\">\r\n                <div class=\"icon\" style=\"background: #e1eeff;\"><i class=\"ion-ios-world-outline\" style=\"color: #2282ff;\"></i></div>\r\n                <h4 class=\"title\"><a href=\"\">Nemo Enim</a></h4>\r\n                <p class=\"description\">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>\r\n            </div>\r\n            </div>\r\n            <div class=\"col-md-6 col-lg-4 wow bounceInUp\" data-wow-delay=\"0.2s\" data-wow-duration=\"1.4s\">\r\n            <div class=\"box\">\r\n                <div class=\"icon\" style=\"background: #ecebff;\"><i class=\"ion-ios-clock-outline\" style=\"color: #8660fe;\"></i></div>\r\n                <h4 class=\"title\"><a href=\"\">Eiusmod Tempor</a></h4>\r\n                <p class=\"description\">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>\r\n            </div>\r\n            </div>\r\n\r\n        </div>\r\n\r\n        </div>\r\n    </section> -->\r\n\r\n    <!-- #services -->\r\n\r\n    <!--==========================\r\n        Why Us Section\r\n    ============================-->\r\n    <!-- <section id=\"why-us\" class=\"wow fadeIn\">\r\n        <div class=\"container-fluid\">\r\n        \r\n        <header class=\"section-header\">\r\n            <h3>Why choose us?</h3>\r\n            <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>\r\n        </header>\r\n\r\n        <div class=\"row\">\r\n\r\n            <div class=\"col-lg-6\">\r\n            <div class=\"why-us-img\">\r\n                <img src=\"../assets/img/why-us.jpg\" alt=\"\" class=\"img-fluid\">\r\n            </div>\r\n            </div>\r\n\r\n            <div class=\"col-lg-6\">\r\n            <div class=\"why-us-content\">\r\n                <p>Molestiae omnis numquam corrupti omnis itaque. Voluptatum quidem impedit. Odio dolorum exercitationem est error omnis repudiandae ad dolorum sit.</p>\r\n                <p>\r\n                Explicabo repellendus quia labore. Non optio quo ea ut ratione et quaerat. Porro facilis deleniti porro consequatur\r\n                et temporibus. Labore est odio.\r\n\r\n                Odio omnis saepe qui. Veniam eaque ipsum. Ea quia voluptatum quis explicabo sed nihil repellat..\r\n                </p>\r\n\r\n                <div class=\"features wow bounceInUp clearfix\">\r\n                <i class=\"fa fa-diamond\" style=\"color: #f058dc;\"></i>\r\n                <h4>Corporis dolorem</h4>\r\n                <p>Commodi quia voluptatum. Est cupiditate voluptas quaerat officiis ex alias dignissimos et ipsum. Soluta at enim modi ut incidunt dolor et.</p>\r\n                </div>\r\n\r\n                <div class=\"features wow bounceInUp clearfix\">\r\n                <i class=\"fa fa-object-group\" style=\"color: #ffb774;\"></i>\r\n                <h4>Eum ut aspernatur</h4>\r\n                <p>Molestias eius rerum iusto voluptas et ab cupiditate aut enim. Assumenda animi occaecati. Quo dolore fuga quasi autem aliquid ipsum odit. Perferendis doloremque iure nulla aut.</p>\r\n                </div>\r\n                \r\n                <div class=\"features wow bounceInUp clearfix\">\r\n                <i class=\"fa fa-language\" style=\"color: #589af1;\"></i>\r\n                <h4>Voluptates dolores</h4>\r\n                <p>Voluptates nihil et quis omnis et eaque omnis sint aut. Ducimus dolorum aspernatur. Totam dolores ut enim ullam voluptas distinctio aut.</p>\r\n                </div>\r\n                \r\n            </div>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n        </div>\r\n\r\n        <div class=\"container\">\r\n        <div class=\"row counters\">\r\n\r\n            <div class=\"col-lg-3 col-6 text-center\">\r\n            <span data-toggle=\"counter-up\">274</span>\r\n            <p>Clients</p>\r\n            </div>\r\n\r\n            <div class=\"col-lg-3 col-6 text-center\">\r\n            <span data-toggle=\"counter-up\">421</span>\r\n            <p>Projects</p>\r\n            </div>\r\n\r\n            <div class=\"col-lg-3 col-6 text-center\">\r\n            <span data-toggle=\"counter-up\">1,364</span>\r\n            <p>Hours Of Support</p>\r\n            </div>\r\n\r\n            <div class=\"col-lg-3 col-6 text-center\">\r\n            <span data-toggle=\"counter-up\">18</span>\r\n            <p>Hard Workers</p>\r\n            </div>\r\n\r\n        </div>\r\n\r\n        </div>\r\n    </section> -->\r\n\r\n    <!--==========================\r\n        Call To Action Section\r\n    ============================-->\r\n    <!-- <section id=\"call-to-action\" class=\"wow fadeInUp\">\r\n        <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-9 text-center text-lg-left\">\r\n            <h3 class=\"cta-title\">Call To Action</h3>\r\n            <p class=\"cta-text\"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n            </div>\r\n            <div class=\"col-lg-3 cta-btn-container text-center\">\r\n            <a class=\"cta-btn align-middle\" href=\"#\">Call To Action</a>\r\n            </div>\r\n        </div>\r\n\r\n        </div>\r\n    </section> -->\r\n\r\n    <!-- #call-to-action -->\r\n\r\n            \r\n\r\n    <!--==========================\r\n    Portfolio Section\r\n    ============================-->\r\n    <!-- <section id=\"portfolio\" class=\"section-bg\">\r\n    <div class=\"container\">\r\n\r\n        <header class=\"section-header\">\r\n        <h3 class=\"section-title\">Our Portfolio</h3>\r\n        </header>\r\n\r\n        <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n            <ul id=\"portfolio-flters\">\r\n            <li data-filter=\"*\" class=\"filter-active\">All</li>\r\n            <li data-filter=\".filter-app\">App</li>\r\n            <li data-filter=\".filter-card\">Card</li>\r\n            <li data-filter=\".filter-web\">Web</li>\r\n            </ul>\r\n        </div>\r\n        </div>\r\n\r\n        <div class=\"row portfolio-container\">\r\n\r\n        <div class=\"col-lg-4 col-md-6 portfolio-item filter-app\">\r\n            <div class=\"portfolio-wrap\">\r\n            <img src=\"img/portfolio/app1.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"portfolio-info\">\r\n                <h4><a href=\"#\">App 1</a></h4>\r\n                <p>App</p>\r\n                <div>\r\n                <a href=\"img/portfolio/app1.jpg\" data-lightbox=\"portfolio\" data-title=\"App 1\" class=\"link-preview\" title=\"Preview\"><i class=\"ion ion-eye\"></i></a>\r\n                <a href=\"#\" class=\"link-details\" title=\"More Details\"><i class=\"ion ion-android-open\"></i></a>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-4 col-md-6 portfolio-item filter-web\" data-wow-delay=\"0.1s\">\r\n            <div class=\"portfolio-wrap\">\r\n            <img src=\"img/portfolio/web3.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"portfolio-info\">\r\n                <h4><a href=\"#\">Web 3</a></h4>\r\n                <p>Web</p>\r\n                <div>\r\n                <a href=\"img/portfolio/web3.jpg\" class=\"link-preview\" data-lightbox=\"portfolio\" data-title=\"Web 3\" title=\"Preview\"><i class=\"ion ion-eye\"></i></a>\r\n                <a href=\"#\" class=\"link-details\" title=\"More Details\"><i class=\"ion ion-android-open\"></i></a>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-4 col-md-6 portfolio-item filter-app\" data-wow-delay=\"0.2s\">\r\n            <div class=\"portfolio-wrap\">\r\n            <img src=\"img/portfolio/app2.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"portfolio-info\">\r\n                <h4><a href=\"#\">App 2</a></h4>\r\n                <p>App</p>\r\n                <div>\r\n                <a href=\"img/portfolio/app2.jpg\" class=\"link-preview\" data-lightbox=\"portfolio\" data-title=\"App 2\" title=\"Preview\"><i class=\"ion ion-eye\"></i></a>\r\n                <a href=\"#\" class=\"link-details\" title=\"More Details\"><i class=\"ion ion-android-open\"></i></a>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-4 col-md-6 portfolio-item filter-card\">\r\n            <div class=\"portfolio-wrap\">\r\n            <img src=\"img/portfolio/card2.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"portfolio-info\">\r\n                <h4><a href=\"#\">Card 2</a></h4>\r\n                <p>Card</p>\r\n                <div>\r\n                <a href=\"img/portfolio/card2.jpg\" class=\"link-preview\" data-lightbox=\"portfolio\" data-title=\"Card 2\" title=\"Preview\"><i class=\"ion ion-eye\"></i></a>\r\n                <a href=\"#\" class=\"link-details\" title=\"More Details\"><i class=\"ion ion-android-open\"></i></a>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-4 col-md-6 portfolio-item filter-web\" data-wow-delay=\"0.1s\">\r\n            <div class=\"portfolio-wrap\">\r\n            <img src=\"img/portfolio/web2.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"portfolio-info\">\r\n                <h4><a href=\"#\">Web 2</a></h4>\r\n                <p>Web</p>\r\n                <div>\r\n                <a href=\"img/portfolio/web2.jpg\" class=\"link-preview\" data-lightbox=\"portfolio\" data-title=\"Web 2\" title=\"Preview\"><i class=\"ion ion-eye\"></i></a>\r\n                <a href=\"#\" class=\"link-details\" title=\"More Details\"><i class=\"ion ion-android-open\"></i></a>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-4 col-md-6 portfolio-item filter-app\" data-wow-delay=\"0.2s\">\r\n            <div class=\"portfolio-wrap\">\r\n            <img src=\"img/portfolio/app3.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"portfolio-info\">\r\n                <h4><a href=\"#\">App 3</a></h4>\r\n                <p>App</p>\r\n                <div>\r\n                <a href=\"img/portfolio/app3.jpg\" class=\"link-preview\" data-lightbox=\"portfolio\" data-title=\"App 3\" title=\"Preview\"><i class=\"ion ion-eye\"></i></a>\r\n                <a href=\"#\" class=\"link-details\" title=\"More Details\"><i class=\"ion ion-android-open\"></i></a>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-4 col-md-6 portfolio-item filter-card\">\r\n            <div class=\"portfolio-wrap\">\r\n            <img src=\"img/portfolio/card1.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"portfolio-info\">\r\n                <h4><a href=\"#\">Card 1</a></h4>\r\n                <p>Card</p>\r\n                <div>\r\n                <a href=\"img/portfolio/card1.jpg\" class=\"link-preview\" data-lightbox=\"portfolio\" data-title=\"Card 1\" title=\"Preview\"><i class=\"ion ion-eye\"></i></a>\r\n                <a href=\"#\" class=\"link-details\" title=\"More Details\"><i class=\"ion ion-android-open\"></i></a>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-4 col-md-6 portfolio-item filter-card\" data-wow-delay=\"0.1s\">\r\n            <div class=\"portfolio-wrap\">\r\n            <img src=\"img/portfolio/card3.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"portfolio-info\">\r\n                <h4><a href=\"#\">Card 3</a></h4>\r\n                <p>Card</p>\r\n                <div>\r\n                <a href=\"img/portfolio/card3.jpg\" class=\"link-preview\" data-lightbox=\"portfolio\" data-title=\"Card 3\" title=\"Preview\"><i class=\"ion ion-eye\"></i></a>\r\n                <a href=\"#\" class=\"link-details\" title=\"More Details\"><i class=\"ion ion-android-open\"></i></a>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-4 col-md-6 portfolio-item filter-web\" data-wow-delay=\"0.2s\">\r\n            <div class=\"portfolio-wrap\">\r\n            <img src=\"img/portfolio/web1.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"portfolio-info\">\r\n                <h4><a href=\"#\">Web 1</a></h4>\r\n                <p>Web</p>\r\n                <div>\r\n                <a href=\"img/portfolio/web1.jpg\" class=\"link-preview\" data-lightbox=\"portfolio\" data-title=\"Web 1\" title=\"Preview\"><i class=\"ion ion-eye\"></i></a>\r\n                <a href=\"#\" class=\"link-details\" title=\"More Details\"><i class=\"ion ion-android-open\"></i></a>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n    </section> -->\r\n\r\n    <!-- #portfolio -->\r\n\r\n    <!--==========================\r\n    Clients Section\r\n    ============================-->\r\n    <!-- <section id=\"testimonials\">\r\n    <div class=\"container\">\r\n\r\n        <header class=\"section-header\">\r\n        <h3>Testimonials</h3>\r\n        </header>\r\n\r\n        <div class=\"row justify-content-center\">\r\n        <div class=\"col-lg-8\">\r\n\r\n            <div class=\"owl-carousel testimonials-carousel wow fadeInUp\">\r\n\r\n            <div class=\"testimonial-item\">\r\n                <img src=\"img/testimonial-1.jpg\" class=\"testimonial-img\" alt=\"\">\r\n                <h3>Saul Goodman</h3>\r\n                <h4>Ceo &amp; Founder</h4>\r\n                <p>\r\n                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.\r\n                </p>\r\n            </div>\r\n\r\n            <div class=\"testimonial-item\">\r\n                <img src=\"img/testimonial-2.jpg\" class=\"testimonial-img\" alt=\"\">\r\n                <h3>Sara Wilsson</h3>\r\n                <h4>Designer</h4>\r\n                <p>\r\n                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.\r\n                </p>\r\n            </div>\r\n\r\n            <div class=\"testimonial-item\">\r\n                <img src=\"img/testimonial-3.jpg\" class=\"testimonial-img\" alt=\"\">\r\n                <h3>Jena Karlis</h3>\r\n                <h4>Store Owner</h4>\r\n                <p>\r\n                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.\r\n                </p>\r\n            </div>\r\n\r\n            <div class=\"testimonial-item\">\r\n                <img src=\"img/testimonial-4.jpg\" class=\"testimonial-img\" alt=\"\">\r\n                <h3>Matt Brandon</h3>\r\n                <h4>Freelancer</h4>\r\n                <p>\r\n                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.\r\n                </p>\r\n            </div>\r\n\r\n            </div>\r\n\r\n        </div>\r\n        </div>\r\n\r\n\r\n    </div>\r\n    </section> -->\r\n\r\n    <!-- #testimonials -->\r\n\r\n    <!--==========================\r\n    Team Section\r\n    ============================-->\r\n    <!-- <section id=\"team\" class=\"section-bg\">\r\n    <div class=\"container\">\r\n        <div class=\"section-header\">\r\n        <h3>Team</h3>\r\n        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n\r\n        <div class=\"col-lg-3 col-md-6 wow fadeInUp\">\r\n            <div class=\"member\">\r\n            <img src=\"img/team-1.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"member-info\">\r\n                <div class=\"member-info-content\">\r\n                <h4>Walter White</h4>\r\n                <span>Chief Executive Officer</span>\r\n                <div class=\"social\">\r\n                    <a href=\"\"><i class=\"fa fa-twitter\"></i></a>\r\n                    <a href=\"\"><i class=\"fa fa-facebook\"></i></a>\r\n                    <a href=\"\"><i class=\"fa fa-google-plus\"></i></a>\r\n                    <a href=\"\"><i class=\"fa fa-linkedin\"></i></a>\r\n                </div>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-3 col-md-6 wow fadeInUp\" data-wow-delay=\"0.1s\">\r\n            <div class=\"member\">\r\n            <img src=\"img/team-2.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"member-info\">\r\n                <div class=\"member-info-content\">\r\n                <h4>Sarah Jhonson</h4>\r\n                <span>Product Manager</span>\r\n                <div class=\"social\">\r\n                    <a href=\"\"><i class=\"fa fa-twitter\"></i></a>\r\n                    <a href=\"\"><i class=\"fa fa-facebook\"></i></a>\r\n                    <a href=\"\"><i class=\"fa fa-google-plus\"></i></a>\r\n                    <a href=\"\"><i class=\"fa fa-linkedin\"></i></a>\r\n                </div>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-3 col-md-6 wow fadeInUp\" data-wow-delay=\"0.2s\">\r\n            <div class=\"member\">\r\n            <img src=\"img/team-3.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"member-info\">\r\n                <div class=\"member-info-content\">\r\n                <h4>William Anderson</h4>\r\n                <span>CTO</span>\r\n                <div class=\"social\">\r\n                    <a href=\"\"><i class=\"fa fa-twitter\"></i></a>\r\n                    <a href=\"\"><i class=\"fa fa-facebook\"></i></a>\r\n                    <a href=\"\"><i class=\"fa fa-google-plus\"></i></a>\r\n                    <a href=\"\"><i class=\"fa fa-linkedin\"></i></a>\r\n                </div>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col-lg-3 col-md-6 wow fadeInUp\" data-wow-delay=\"0.3s\">\r\n            <div class=\"member\">\r\n            <img src=\"img/team-4.jpg\" class=\"img-fluid\" alt=\"\">\r\n            <div class=\"member-info\">\r\n                <div class=\"member-info-content\">\r\n                <h4>Amanda Jepson</h4>\r\n                <span>Accountant</span>\r\n                <div class=\"social\">\r\n                    <a href=\"\"><i class=\"fa fa-twitter\"></i></a>\r\n                    <a href=\"\"><i class=\"fa fa-facebook\"></i></a>\r\n                    <a href=\"\"><i class=\"fa fa-google-plus\"></i></a>\r\n                    <a href=\"\"><i class=\"fa fa-linkedin\"></i></a>\r\n                </div>\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n    </section> -->\r\n\r\n    <!-- #team -->\r\n\r\n    <!--==========================\r\n    Clients Section\r\n    ============================-->\r\n    <!-- <section id=\"clients\" class=\"wow fadeInUp\">\r\n    <div class=\"container\">\r\n\r\n        <header class=\"section-header\">\r\n        <h3>Our Clients</h3>\r\n        </header>\r\n\r\n        <div class=\"owl-carousel clients-carousel\">\r\n        <img src=\"../assets/img/clients/client-1.png\" alt=\"\">\r\n        <img src=\"../assets/img/clients/client-2.png\" alt=\"\">\r\n        <img src=\"../assets/img/clients/client-3.png\" alt=\"\">\r\n        <img src=\"../assets/img/clients/client-4.png\" alt=\"\">\r\n        <img src=\"../assets/img/clients/client-5.png\" alt=\"\">\r\n        <img src=\"../assets/img/clients/client-6.png\" alt=\"\">\r\n        <img src=\"../assets/img/clients/client-7.png\" alt=\"\">\r\n        <img src=\"../assets/img/clients/client-8.png\" alt=\"\">\r\n        </div>\r\n\r\n    </div>\r\n    </section> -->\r\n    <!-- #clients -->\r\n\r\n</main>"
-
-/***/ }),
-
-/***/ "./src/app/home/home.component.ts":
-/*!****************************************!*\
-  !*** ./src/app/home/home.component.ts ***!
-  \****************************************/
-/*! exports provided: HomeComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var _shared_multi_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/multi.service */ "./src/app/shared/multi.service.ts");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
-/* harmony import */ var _shared_popup_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/popup.service */ "./src/app/shared/popup.service.ts");
-
-
-
-
-
-
-var HomeComponent = /** @class */ (function () {
-    function HomeComponent(http, multi, dialog, popupLang) {
-        this.http = http;
-        this.multi = multi;
-        this.dialog = dialog;
-        this.popupLang = popupLang;
-        this.country = '';
-    }
-    HomeComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        /* this.test() */
-        this.lang = this.multi.lang;
-        this.setContent(this.lang);
-        this.multi.tlang.subscribe(function (lang) {
-            _this.lang = lang;
-            _this.setContent(lang);
-        });
-    };
-    HomeComponent.prototype.setContent = function (lang) {
-        if (lang === 'eng') {
-            this.content = this.multi.homecontent.eng;
-            this.navMenuActive = this.multi.navMenu.eng;
-            this.pricingContent = this.multi.pricing.eng;
-            this.faqContent = this.multi.faq.eng;
-            this.somGlobalCommunityContent = this.multi.sombankcommunity.eng;
-        }
-        else if (lang === 'som') {
-            this.content = this.multi.homecontent.som;
-            this.navMenuActive = this.multi.navMenu.som;
-            this.pricingContent = this.multi.pricing.som;
-            this.faqContent = this.multi.faq.som;
-            this.somGlobalCommunityContent = this.multi.sombankcommunity.som;
-        }
-        else if (lang === 'arb') {
-            this.content = this.multi.homecontent.arb;
-            this.navMenuActive = this.multi.navMenu.arb;
-            this.pricingContent = this.multi.pricing.arb;
-            this.faqContent = this.multi.faq.arb;
-            this.somGlobalCommunityContent = this.multi.sombankcommunity.arb;
-        }
-    };
-    /* test(){
-        this.http.get('https://ip-api.com/json').subscribe(
-            (resp:Response) => {
-                let res = resp.json()
-                setTimeout(()=>{
-                    this.country = res.country
-                }, 2000)
-            },
-            (err) => {
-                console.log(err)
-            }
-        )
-    } */
-    /*
-    function ipLookUp () {
-    $.ajax('https://ip-api.com/json')
-    .then(
-        function success(response) {
-            console.log('User\'s Location Data is ', response);
-            console.log('User\'s Country', response.country);
-        },
-    
-        function fail(data, status) {
-            console.log('Request failed.  Returned status of',
-                        status);
-        }
-    );
-    }
-    ipLookUp()
-    */
-    /*    ngOnDestroy(){
-           this.subscription.unsubscribe()
-       } */
-    HomeComponent.prototype.onSubmit = function (f) {
-        this.multi.onSubmit(f, this.lang);
-        this.popupLang.langForPopup.next(this.lang);
-        /* console.log(f.value)
-       
-        const url = 'http://localhost/src/assets/contactform/email.php';
-        const url = 'http://test.skillathontech.com/assets/contactform/email.php';
-        this.http.post(url, f.value,
-        { headers: new Headers({'Content-Type':'application/json'}) } ).subscribe(
-            (res) => {
-                console.log(res)
-                this.multi.openAppInstallSuccessful()
-            }
-        ) */
-    };
-    HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'home-content',
-            template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
-            styles: ["input.ng-invalid.ng-touched{\n        border-bottom: 1px red solid\n    }\n    input[type=number]::-webkit-inner-spin-button, \n    input[type=number]::-webkit-outer-spin-button { \n        -webkit-appearance: none;\n        -moz-appearance: none;\n        appearance: none;\n        margin: 0; \n    }"]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"], _shared_multi_service__WEBPACK_IMPORTED_MODULE_3__["MultiLangService"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialog"], _shared_popup_service__WEBPACK_IMPORTED_MODULE_5__["PopupLangService"]])
-    ], HomeComponent);
-    return HomeComponent;
 }());
 
 
@@ -829,74 +531,6 @@ var HeaderNavigationComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/personal-account/personal-account.component.html":
-/*!******************************************************************!*\
-  !*** ./src/app/personal-account/personal-account.component.html ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!--==========================\r\nIntro Section\r\n============================-->\r\n\r\n<section id=\"intro\" class=\"clearfix\" style=\"background-image:url(../assets/img/bg.png)\">\r\n    <div class=\"container d-flex h-100\">\r\n        <div class=\"row justify-content-center align-self-center extra-space\">\r\n        \r\n        <div class=\"col-md-6 intro-info order-md-first order-last align-self-center\">\r\n            <h2 [ngClass]=\"{'arabicSH': lang==='som' || lang==='arb'}\">{{ content.heading1 }}<br> <span>{{ content.heading2 }}</span><br> {{ content.heading3 }}</h2>\r\n            \r\n            <form (ngSubmit)=\"onSubmit(f)\" #f=\"ngForm\">\r\n                <div >\r\n                    <div class=\"form-row justify-content-center\">\r\n                        <div class=\"col-9\">\r\n                            <input type=\"email\" class=\"form-control custom-remove-border\" [ngClass]=\"{'custom-form-control':lang==='som' || lang==='arb'}\" maxlength=\"50\" placeholder=\"email@test.com\" name=\"email\" required email ngModel #email=\"ngModel\">\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"form-row justify-content-center\">\r\n                        <div class=\"col-3\">\r\n                            <select class=\"custom-select mr-sm-2 custom-remove-border\" name=\"ext\" [ngModel]=\"'+252'\" required #ext=\"ngModel\">\r\n                                <option value=\"+91\">+91</option>\r\n                                <option value=\"+252\">+252</option>\r\n                                <option value=\"+1\">+1</option> \r\n                                <option value=\"+6\">+6</option>\r\n                            </select>\r\n                        </div>\r\n                        <div class=\"col-6\">\r\n                            <input type=\"number\" class=\"form-control custom-remove-border\" [ngClass]=\"{'custom-form-control':lang==='som' || lang==='arb'}\" placeholder=\"Mobile Number\" name=\"cell\" required ngModel #cell=\"ngModel\">\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"form-row justify-content-center\">\r\n                        <div class=\"col-6\">\r\n                    <button type=\"submit\" [ngClass]=\"{'arabicH4-center': lang ==='som' || lang ==='arb'}\" class=\"btn btn-primary form-control\" [disabled]=\"f.invalid\"> {{ content.button }} </button>\r\n                    </div></div>\r\n                </div>\r\n            </form>               \r\n        </div>\r\n    \r\n        <div class=\"col-md-6 intro-info order-md-last order-first\">\r\n            <div class=\"row justify-content-center\">\r\n                <img src=\"../../assets/img/slider-t-plus-anim.gif\" alt=\"\" class=\"custom-img-fluid img-fluid\">\r\n            </div>\r\n        </div>\r\n\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n<!-- #intro -->\r\n\r\n<main id=\"main\">\r\n\r\n<!--==========================\r\n    Features Section\r\n============================-->\r\n\r\n<section id=\"features\">\r\n    <div class=\"container-fluid\">\r\n\r\n        <div class=\"row feature-item\">\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section1.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                    {{ content.section1.content }}\r\n                </p>\r\n            </div>\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"https://assets.revolut.com/media/business/step1-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row feature-item extra-space\">\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section2.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                    {{ content.section2.content }}\r\n                </p>\r\n            </div>\r\n\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"https://assets.revolut.com/media/business/step2-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row feature-item extra-space\">\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\" > {{ content.section3.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                        {{ content.section3.content }} \r\n                </p>\r\n            </div>\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"https://assets.revolut.com/media/business/step3-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row feature-item extra-space\">\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section4.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                        {{ content.section4.content }} \r\n                </p>\r\n            </div>\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                        <img src=\"https://assets.revolut.com/media/business/step3-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</section>\r\n        \r\n<!-- #features -->\r\n\r\n</main>"
-
-/***/ }),
-
-/***/ "./src/app/personal-account/personal-account.component.ts":
-/*!****************************************************************!*\
-  !*** ./src/app/personal-account/personal-account.component.ts ***!
-  \****************************************************************/
-/*! exports provided: PersonalAccountComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PersonalAccountComponent", function() { return PersonalAccountComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_multi_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/multi.service */ "./src/app/shared/multi.service.ts");
-
-
-
-var PersonalAccountComponent = /** @class */ (function () {
-    function PersonalAccountComponent(multi) {
-        this.multi = multi;
-    }
-    PersonalAccountComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.lang = this.multi.lang;
-        this.getContent(this.lang);
-        this.multi.tlang.subscribe(function (lang) {
-            _this.lang = lang;
-            _this.getContent(lang);
-        });
-    };
-    PersonalAccountComponent.prototype.getContent = function (lang) {
-        if (lang === 'eng') {
-            this.content = this.multi.personalPageContent.eng;
-        }
-        else if (lang === 'som') {
-            this.content = this.multi.personalPageContent.som;
-        }
-        else if (lang === 'arb') {
-            this.content = this.multi.personalPageContent.arb;
-        }
-    };
-    PersonalAccountComponent.prototype.onSubmit = function (f) {
-        this.multi.onSubmit(f, this.lang);
-    };
-    PersonalAccountComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'personal',
-            template: __webpack_require__(/*! ./personal-account.component.html */ "./src/app/personal-account/personal-account.component.html")
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_multi_service__WEBPACK_IMPORTED_MODULE_2__["MultiLangService"]])
-    ], PersonalAccountComponent);
-    return PersonalAccountComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/popup/popup.component.html":
 /*!********************************************!*\
   !*** ./src/app/popup/popup.component.html ***!
@@ -939,71 +573,6 @@ var PopupComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"]])
     ], PopupComponent);
     return PopupComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/pricing/pricing.component.html":
-/*!************************************************!*\
-  !*** ./src/app/pricing/pricing.component.html ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!--==========================\r\n    Pricing Section\r\n============================-->\r\n\r\n<section id=\"pricing\" class=\"wow fadeInUp section-bg custom-padding-top\">\r\n\r\n    <div class=\"container\">\r\n\r\n        <header class=\"section-header\">\r\n        <h3 [ngClass]=\"{'arabicH4-center': lang === 'arb' || lang === 'som'}\"> {{ pricingContent.heading }} </h3>\r\n        <p [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\"> {{ pricingContent.content }} </p>\r\n        </header>\r\n\r\n        <div class=\"row flex-items-xs-middle flex-items-xs-center\">\r\n    \r\n        <!-- Basic Plan  -->\r\n        <div class=\"col-xs-12 col-lg-4\">\r\n            <div class=\"card\">\r\n            <div class=\"card-header\">\r\n                <h4 [ngClass]=\"{'arabicH4-center':lang === 'arb' || lang === 'som' }\"> {{ pricingContent.standerd.heading }} </h4>\r\n            </div>\r\n            <div class=\"card-block\">\r\n                <h6 class=\"card-title\">\r\n                    <span class=\"currency\" [ngClass]=\"{'arabicH4-center':lang === 'arb' || lang === 'som' }\">$</span>0<span class=\"period\">/ {{ pricingContent.standerd.pricing }} </span> \r\n                </h6>\r\n                <ul class=\"list-group custom-align-left\">\r\n                <li class=\"list-group-item\" *ngFor=\"let item of pricingContent.standerd.features\" [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\"><i class=\"fa fa-check\"></i> {{ item }} </li>\r\n                <!-- \r\n                <li class=\"list-group-item\"><i class=\"fa fa-check\"></i>  Free Euro IBAN account</li>\r\n                <li class=\"list-group-item\"><i class=\"fa fa-check\"></i>  Spend in over 150 currencies at the interbank exchange rate</li>\r\n                <li class=\"list-group-item\"><i class=\"fa fa-check\"></i>  No fee exchange in 29 fiat currencies up to £5,000 per month</li> -->\r\n                </ul>\r\n                <a href=\"#\" class=\"btn\"> {{ pricingContent.standerd.button }} </a>\r\n            </div>\r\n            </div>\r\n        </div>\r\n    \r\n        <!-- Regular Plan  -->\r\n        <div class=\"col-xs-12 col-lg-4\">\r\n            <div class=\"card\">\r\n            <div class=\"card-header\">\r\n                <h4 [ngClass]=\"{'arabicH4-center':lang === 'arb' || lang === 'som' }\">{{ pricingContent.premium.heading }}</h4>\r\n            </div>\r\n            <div class=\"card-block\">\r\n                <h6 class=\"card-title\"> \r\n                    <span class=\"currency\" [ngClass]=\"{'arabicH4-center':lang === 'arb' || lang === 'som' }\">$</span>29<span class=\"period\">/ {{ pricingContent.premium.pricing }} </span>\r\n                </h6>\r\n                <ul class=\"list-group custom-align-left\">\r\n                <li class=\"list-group-item\" *ngFor=\"let item of pricingContent.premium.features\" [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\"><i class=\"fa fa-check\"></i> {{ item }} </li>\r\n                </ul>\r\n                <a href=\"#\" class=\"btn\">{{ pricingContent.premium.button }}</a>\r\n            </div>\r\n            </div>\r\n        </div>\r\n    \r\n        <!-- Premium Plan  -->\r\n        <div class=\"col-xs-12 col-lg-4\">\r\n            <div class=\"card\">\r\n            <div class=\"card-header\">\r\n                <h4 [ngClass]=\"{'arabicH4-center':lang === 'arb' || lang === 'som' }\">{{ pricingContent.gold.heading }}</h4>\r\n            </div>\r\n            <div class=\"card-block\">\r\n                <h6 class=\"card-title\"> \r\n                    <span class=\"currency\" [ngClass]=\"{'arabicH4-center':lang === 'arb' || lang === 'som' }\">$</span>39<span class=\"period\">/ {{ pricingContent.gold.pricing }} </span>\r\n                </h6>\r\n                <ul class=\"list-group custom-align-left\">\r\n                    <li class=\"list-group-item\" *ngFor=\"let item of pricingContent.gold.features\" [ngClass]=\"{'arabicP': lang === 'arb' || lang === 'som'}\"><i class=\"fa fa-check\"></i> {{ item }} </li>\r\n                </ul>\r\n                <a href=\"#\" class=\"btn\">{{ pricingContent.gold.button }}</a>\r\n            </div>\r\n            </div>\r\n        </div>\r\n    \r\n        </div>\r\n    </div>\r\n\r\n</section>\r\n\r\n<!-- #pricing -->"
-
-/***/ }),
-
-/***/ "./src/app/pricing/pricing.component.ts":
-/*!**********************************************!*\
-  !*** ./src/app/pricing/pricing.component.ts ***!
-  \**********************************************/
-/*! exports provided: PricingComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PricingComponent", function() { return PricingComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_multi_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/multi.service */ "./src/app/shared/multi.service.ts");
-
-
-
-var PricingComponent = /** @class */ (function () {
-    function PricingComponent(multi) {
-        this.multi = multi;
-    }
-    PricingComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.lang = this.multi.lang;
-        this.content(this.lang);
-        this.multi.tlang.subscribe(function (lang) {
-            _this.lang = _this.multi.lang;
-            _this.content(lang);
-        });
-    };
-    PricingComponent.prototype.content = function (lang) {
-        if (lang === 'eng') {
-            this.pricingContent = this.multi.pricing.eng;
-        }
-        else if (lang === 'som') {
-            this.pricingContent = this.multi.pricing.som;
-        }
-        else if (lang === 'arb') {
-            this.pricingContent = this.multi.pricing.arb;
-        }
-    };
-    PricingComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'pricing',
-            template: __webpack_require__(/*! ./pricing.component.html */ "./src/app/pricing/pricing.component.html")
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_multi_service__WEBPACK_IMPORTED_MODULE_2__["MultiLangService"]])
-    ], PricingComponent);
-    return PricingComponent;
 }());
 
 
@@ -1414,8 +983,8 @@ var MultiLangService = /** @class */ (function () {
     MultiLangService.prototype.onSubmit = function (f, lang) {
         var _this = this;
         console.log(f.value);
-        /* const url = 'http://localhost/src/assets/contactform/email.php'; */
-        var url = 'http://test.skillathontech.com/assets/contactform/email.php';
+        var url = '../../assets/contactform/email.php';
+        /* const url = 'http://test.skillathontech.com/assets/contactform/email.php'; */
         this.http.post(url, f.value, { headers: new _angular_http__WEBPACK_IMPORTED_MODULE_7__["Headers"]({ 'Content-Type': 'application/json' }) }).subscribe(function (res) {
             console.log(res);
             _this.openAppInstallSuccessful(lang);
@@ -1458,74 +1027,6 @@ var PopupLangService = /** @class */ (function () {
         })
     ], PopupLangService);
     return PopupLangService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/t-plus-account/t-plus-account.component.html":
-/*!**************************************************************!*\
-  !*** ./src/app/t-plus-account/t-plus-account.component.html ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!--==========================\r\nIntro Section\r\n============================-->\r\n\r\n<section id=\"intro\" class=\"clearfix\" style=\"background-image:url(../assets/img/bg.png)\">\r\n    <div class=\"container d-flex h-100\">\r\n        <div class=\"row justify-content-center align-self-center extra-space\">\r\n        \r\n        <div class=\"col-md-6 intro-info order-md-first order-last align-self-center\">\r\n            <h2 [ngClass]=\"{'arabicSH': lang==='som' || lang==='arb'}\">{{ content.heading1 }}<br> <span>{{ content.heading2 }}</span><br> {{ content.heading3 }}</h2>\r\n            <form (ngSubmit)=\"onSubmit(f)\" #f=\"ngForm\">\r\n                <div >\r\n                    <div class=\"form-row justify-content-center\">\r\n                        <div class=\"col-9\">\r\n                            <input type=\"email\" class=\"form-control custom-remove-border\" [ngClass]=\"{'custom-form-control':lang==='som' || lang==='arb'}\" maxlength=\"50\" placeholder=\"email@test.com\" name=\"email\" required email ngModel #email=\"ngModel\">\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"form-row justify-content-center\">\r\n                        <div class=\"col-3\">\r\n                            <select class=\"custom-select mr-sm-2 custom-remove-border\" name=\"ext\" [ngModel]=\"'+252'\" required #ext=\"ngModel\">\r\n                                <option value=\"+91\">+91</option>\r\n                                <option value=\"+252\">+252</option>\r\n                                <option value=\"+1\">+1</option> \r\n                                <option value=\"+6\">+6</option>\r\n                            </select>\r\n                        </div>\r\n                        <div class=\"col-6\">\r\n                            <input type=\"number\" class=\"form-control custom-remove-border\" [ngClass]=\"{'custom-form-control':lang==='som' || lang==='arb'}\" placeholder=\"Mobile Number\" name=\"cell\" required ngModel #cell=\"ngModel\">\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"form-row justify-content-center\">\r\n                        <div class=\"col-6\">\r\n                    <button type=\"submit\" [ngClass]=\"{'arabicH4-center': lang ==='som' || lang ==='arb'}\" class=\"btn btn-primary form-control\" [disabled]=\"f.invalid\"> {{ content.button }} </button>\r\n                    </div></div>\r\n                </div>\r\n            </form>             \r\n        </div>\r\n    \r\n        <div class=\"col-md-6 intro-info order-md-last order-first\">\r\n            <div class=\"row justify-content-center\">\r\n                <img src=\"../../assets/img/slider-t-plus-anim.gif\" alt=\"\" class=\"custom-img-fluid img-fluid\">\r\n            </div>\r\n        </div>\r\n\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n<!-- #intro -->\r\n\r\n<main id=\"main\">\r\n\r\n<!--==========================\r\n    Features Section\r\n============================-->\r\n\r\n<section id=\"features\">\r\n    <div class=\"container-fluid\">\r\n\r\n        <div class=\"row feature-item\">\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section1.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                    {{ content.section1.content }}\r\n                </p>\r\n            </div>\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"https://assets.revolut.com/media/business/step1-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row feature-item extra-space\">\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section2.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                    {{ content.section2.content }}\r\n                </p>\r\n            </div>\r\n\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"https://assets.revolut.com/media/business/step2-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row feature-item extra-space\">\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\" > {{ content.section3.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                        {{ content.section3.content }} \r\n                </p>\r\n            </div>\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                    <img src=\"https://assets.revolut.com/media/business/step3-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row feature-item extra-space\">\r\n            <div class=\"col-lg-6 wow fadeInUp pt-5 pt-lg-0 custom-center-align extra-padding-l-r\">\r\n                <h3 [ngClass]=\"{'arabicH4':lang === 'arb' || lang === 'som' }\"> {{ content.section4.heading }} </h3>\r\n                <p [ngClass]=\"{'arabicP':lang === 'arb' || lang === 'som' }\">\r\n                        {{ content.section4.content }} \r\n                </p>\r\n            </div>\r\n            <div class=\"col-lg-6 wow fadeInUp\">\r\n                <div class=\"row justify-content-center\">\r\n                        <img src=\"https://assets.revolut.com/media/business/step3-9.png\" class=\"custom-img-fluid-business img-fluid\" alt=\"\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</section>\r\n        \r\n<!-- #features -->\r\n\r\n</main>"
-
-/***/ }),
-
-/***/ "./src/app/t-plus-account/t-plus-account.component.ts":
-/*!************************************************************!*\
-  !*** ./src/app/t-plus-account/t-plus-account.component.ts ***!
-  \************************************************************/
-/*! exports provided: TplusAccountComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TplusAccountComponent", function() { return TplusAccountComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_multi_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/multi.service */ "./src/app/shared/multi.service.ts");
-
-
-
-var TplusAccountComponent = /** @class */ (function () {
-    function TplusAccountComponent(multi) {
-        this.multi = multi;
-    }
-    TplusAccountComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.lang = this.multi.lang;
-        this.getContent(this.lang);
-        this.multi.tlang.subscribe(function (lang) {
-            _this.lang = lang;
-            _this.getContent(lang);
-        });
-    };
-    TplusAccountComponent.prototype.getContent = function (lang) {
-        if (lang === 'eng') {
-            this.content = this.multi.tplusPageContent.eng;
-        }
-        else if (lang === 'som') {
-            this.content = this.multi.tplusPageContent.som;
-        }
-        else if (lang === 'arb') {
-            this.content = this.multi.tplusPageContent.arb;
-        }
-    };
-    TplusAccountComponent.prototype.onSubmit = function (f) {
-        this.multi.onSubmit(f, this.lang);
-    };
-    TplusAccountComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 't-plus',
-            template: __webpack_require__(/*! ./t-plus-account.component.html */ "./src/app/t-plus-account/t-plus-account.component.html")
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_multi_service__WEBPACK_IMPORTED_MODULE_2__["MultiLangService"]])
-    ], TplusAccountComponent);
-    return TplusAccountComponent;
 }());
 
 

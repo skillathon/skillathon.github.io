@@ -42,7 +42,7 @@
     $request = json_decode(file_get_contents("php://input"));
     $to_email = $request->email;
     $email_subject = "Contact form of Sombank";
-    $from_email = "info@skillathontech.com";
+    $from_email = "sombank@sombank.skillathontech.com";
     /* $email_to = $to_email */
     $email_to = "m.afroz4@gmail.com";
 	$headers = 'From: ' . $from_email . "\r\n";

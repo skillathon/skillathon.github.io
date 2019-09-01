@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1564312566063,
+  "timestamp": 1567323520250,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -33,7 +33,6 @@
         "/assets/lib/waypoints/waypoints.min.js",
         "/assets/lib/wow/wow.js",
         "/assets/lib/wow/wow.min.js",
-        "/favicon.ico",
         "/index.html",
         "/manifest.json"
       ],
@@ -53,25 +52,7 @@
       "patterns": []
     }
   ],
-  "dataGroups": [
-    {
-      "name": "test",
-      "patterns": [
-        "\\/.*",
-        "\\/",
-        "\\/about-sombank",
-        "\\/sombank-for-businesses",
-        "\\/t-plus-account",
-        "\\/sombank-pricing",
-        "\\/sombank-personal-account",
-        "\\/sombank-corporate-account"
-      ],
-      "strategy": "freshness",
-      "maxSize": 100,
-      "maxAge": 604800000,
-      "version": 1
-    }
-  ],
+  "dataGroups": [],
   "hashTable": {
     "/assets/css/style.css": "f2e9fb824f568c0678a2f19ebc70e3b4d7f5634d",
     "/assets/img/favicon.png": "32019a9aaf8bffc3bfc0592221673028b3290b2a",
@@ -99,8 +80,7 @@
     "/assets/lib/wow/wow.js": "85f08770c306c14219be66007b4ad215cdf67782",
     "/assets/lib/wow/wow.min.js": "6e6c6236ae0e36425cd195937d6d992cabb0907f",
     "/circle.aa0eaf4f796113dbaff3.png": "8f4ec6ba21a2d876e136738635fc7cdd4f7e1d18",
-    "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/index.html": "cd016af57dab8f06273cd5e982cc0c3f79953541",
+    "/index.html": "dc29c697ab9ea467a5d492ecfeaef96c57e2a916",
     "/manifest.json": "a4232904cf3f7a523616304d4dd1f4b68895bc35",
     "/world.2cf30ffdbfa3db621d30.gif": "2b1cd4cc4db7665fdac1d266bca85d8422ab7355"
   },

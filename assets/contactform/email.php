@@ -1,4 +1,47 @@
 <?php
+    $data = [
+        'email'     => 'johndoe@example.com',
+        'status'    => 'subscribed',
+        'firstname' => 'john',
+        'lastname'  => 'doe'
+    ];
+    
+    syncMailchimp($data);
+    
+    function syncMailchimp($data) {
+        $apiKey = 'd6c2d0e5124de0a4c7a5aa952581c624-us5';
+        $listId = '74e8857ac4';
+    
+        $memberId = md5(strtolower($data['email']));
+        $dataCenter = substr($apiKey,strpos($apiKey,'-')+1);
+        $url = 'https://' . $dataCenter . '.api.mailchimp.com/3.0/lists/' . $listId . '/members/' . $memberId;
+    
+        $json = json_encode([
+            'email_address' => $data['email'],
+            'status'        => $data['status'], // "subscribed","unsubscribed","cleaned","pending"
+            'merge_fields'  => [
+                'FNAME'     => $data['firstname'],
+                'LNAME'     => $data['lastname']
+            ]
+        ]);
+    
+        $ch = curl_init($url);
+    
+        curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $apiKey);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $json);                                                                                                                 
+    
+        $result = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+    
+        return $httpCode;
+
+
     /* header('Content-type: application/json');
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
@@ -35,7 +78,7 @@
     header($response_array);
     return $from_email; */
 
- header('Content-type: application/json');
+ /* header('Content-type: application/json');
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
@@ -43,7 +86,7 @@
     $to_email = $request->email;
     $email_subject = "Contact form of Sombank";
     $from_email = "sombank@sombank.skillathontech.com";
-    /* $email_to = $to_email */
+    $email_to = $to_email
     $email_to = "m.afroz4@gmail.com";
 	$headers = 'From: ' . $from_email . "\r\n";
 	$content  = "Contact Person Name: \r\n";
@@ -59,5 +102,5 @@
     echo json_encode($response_array);
     echo json_encode($from_email);
     header($response_array);
-    return $from_email; 
+    return $from_email;  */
 ?>

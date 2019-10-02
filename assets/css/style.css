@@ -222,7 +222,7 @@ h6 {
 #intro .intro-info h2 {
   color: #413e66;
   margin-bottom: 40px;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
 }
 
@@ -1542,7 +1542,7 @@ h6 {
 
   #intro .intro-info {
     text-align: center;
-    padding-top: 40px;
+    padding-top: 40px !important;
   }
 
   #intro .intro-info h2 {

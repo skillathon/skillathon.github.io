@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1571295287688,
+  "timestamp": 1571317068581,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -54,7 +54,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/assets/css/style.css": "06480a4ba5851cd1f0c320500a631d96762841dc",
+    "/assets/css/style.css": "861716655edb9f6268d9824ecf283eb8ec4dc295",
     "/assets/img/favicon.png": "8ab16a1f61e07f2b4eb3916a3ff8986df1dab13f",
     "/assets/js/main.js": "e2a5e5500bb51e23f52ec174140657e8c6c252cd",
     "/assets/lib/animate/animate.min.css": "afb997fbbc34d1b69b7973423ce5f5373ef62bc0",
@@ -80,7 +80,7 @@
     "/assets/lib/wow/wow.js": "85f08770c306c14219be66007b4ad215cdf67782",
     "/assets/lib/wow/wow.min.js": "6e6c6236ae0e36425cd195937d6d992cabb0907f",
     "/circle.aa0eaf4f796113dbaff3.png": "8f4ec6ba21a2d876e136738635fc7cdd4f7e1d18",
-    "/index.html": "58e0ecbf7d115134943b1b2fc46edcc4e7d6a082",
+    "/index.html": "ad88bf11d7676a30b12c2df48b37ba96ce16a655",
     "/manifest.json": "1b1c80be852e38a04b9c5d1d2edf11417351bbe8",
     "/world.2cf30ffdbfa3db621d30.gif": "2b1cd4cc4db7665fdac1d266bca85d8422ab7355"
   },

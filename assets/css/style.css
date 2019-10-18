@@ -500,9 +500,9 @@ h6 {
 /* Section with background
 --------------------------------*/
 
-.section-bg {
+/* .section-bg {
   background: #f5f8fd;
-}
+} */
 
 /* About Us Section
 --------------------------------*/
@@ -522,10 +522,10 @@ h6 {
 }
 
 #about .about-content h3 {
-  color: #696592;
-  font-weight: 400;
-  font-size: 22px;
-  font-style: italic;
+ /*    */
+  font-weight: 600;
+  font-size: 24px;
+  /* font-style: italic; */
 }
 
 #about .about-content ul {

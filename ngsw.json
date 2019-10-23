@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1571825310418,
+  "timestamp": 1571841418663,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -80,7 +80,7 @@
     "/assets/lib/wow/wow.js": "85f08770c306c14219be66007b4ad215cdf67782",
     "/assets/lib/wow/wow.min.js": "6e6c6236ae0e36425cd195937d6d992cabb0907f",
     "/circle.aa0eaf4f796113dbaff3.png": "8f4ec6ba21a2d876e136738635fc7cdd4f7e1d18",
-    "/index.html": "16b68c6dd94ca0459e0d7526d88ddd5e48f198fe",
+    "/index.html": "3122489e1c45afa2958110658ee381d3adc1767e",
     "/manifest.json": "1b1c80be852e38a04b9c5d1d2edf11417351bbe8",
     "/world.2cf30ffdbfa3db621d30.gif": "2b1cd4cc4db7665fdac1d266bca85d8422ab7355"
   },

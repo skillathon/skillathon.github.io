@@ -37,7 +37,7 @@
     header($response_array);
     return $from_email; */
 
-    $data = [
+   /*  $data = [
         'email'     => 'johndoe@example.com',
         'status'    => 'subscribed',
         'firstname' => 'john',
@@ -75,9 +75,12 @@
     
         $result = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
+        curl_close($ch); 
+        
+                return $httpCode;
+        */
     
-        return $httpCode;
+
 
 
     /* header('Content-type: application/json');

@@ -1,0 +1,105 @@
+{
+  "configVersion": 1,
+  "timestamp": 1573900896004,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/css/style.css",
+        "/assets/img/favicon.png",
+        "/assets/js/main.js",
+        "/assets/lib/animate/animate.min.css",
+        "/assets/lib/bootstrap/js/bootstrap.bundle.min.js",
+        "/assets/lib/counterup/counterup.min.js",
+        "/assets/lib/easing/easing.min.js",
+        "/assets/lib/font-awesome/css/font-awesome.min.css",
+        "/assets/lib/ionicons/css/ionicons.min.css",
+        "/assets/lib/isotope/isotope.pkgd.min.js",
+        "/assets/lib/jquery/jquery-migrate.min.js",
+        "/assets/lib/jquery/jquery.min.js",
+        "/assets/lib/lightbox/css/lightbox.min.css",
+        "/assets/lib/lightbox/js/lightbox.min.js",
+        "/assets/lib/mobile-nav/mobile-nav.js",
+        "/assets/lib/owlcarousel/assets/owl.carousel.css",
+        "/assets/lib/owlcarousel/assets/owl.carousel.min.css",
+        "/assets/lib/owlcarousel/assets/owl.theme.default.css",
+        "/assets/lib/owlcarousel/assets/owl.theme.default.min.css",
+        "/assets/lib/owlcarousel/assets/owl.theme.green.css",
+        "/assets/lib/owlcarousel/assets/owl.theme.green.min.css",
+        "/assets/lib/owlcarousel/owl.carousel.min.js",
+        "/assets/lib/waypoints/waypoints.min.js",
+        "/assets/lib/wow/wow.js",
+        "/assets/lib/wow/wow.min.js",
+        "/index.html",
+        "/manifest.json"
+      ],
+      "patterns": [
+        "https:\\/\\/cdnjs\\.cloudflare\\.com\\/ajax\\/libs\\/jquery\\/3\\.0\\.0\\/jquery\\.js",
+        "https:\\/\\/fonts\\.googleapis\\.com\\/css\\?family=Open\\+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700"
+      ]
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/circle.aa0eaf4f796113dbaff3.png",
+        "/world.2cf30ffdbfa3db621d30.gif"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/css/style.css": "71878fa32f217c94cb5f02888db34aff9aeb4834",
+    "/assets/img/favicon.png": "8ab16a1f61e07f2b4eb3916a3ff8986df1dab13f",
+    "/assets/js/main.js": "e2a5e5500bb51e23f52ec174140657e8c6c252cd",
+    "/assets/lib/animate/animate.min.css": "afb997fbbc34d1b69b7973423ce5f5373ef62bc0",
+    "/assets/lib/bootstrap/js/bootstrap.bundle.min.js": "265a733cb7fbc481fd2510a659a85ad55c93c895",
+    "/assets/lib/counterup/counterup.min.js": "4426c6745ebb31e834dcc1f9105e2e2e7402ffc1",
+    "/assets/lib/easing/easing.min.js": "8cd4375fc3c60237ea3994209d17a57ccbe6b0c6",
+    "/assets/lib/font-awesome/css/font-awesome.min.css": "512c7d79033e3028a9be61b540cf1a6870c896f8",
+    "/assets/lib/ionicons/css/ionicons.min.css": "f0459300e39155df7aa5e94b3bdb8c8594f49a60",
+    "/assets/lib/isotope/isotope.pkgd.min.js": "3cb37f0004158f3e8f9194ebdb1d361dce6f0ed0",
+    "/assets/lib/jquery/jquery-migrate.min.js": "714c992e91da6ede8bad97f87375ca2e3b89be1a",
+    "/assets/lib/jquery/jquery.min.js": "0dc32db4aa9c5f03f3b38c47d883dbd4fed13aae",
+    "/assets/lib/lightbox/css/lightbox.min.css": "27f77d2a57bee715732b0fe219baa62768544a90",
+    "/assets/lib/lightbox/js/lightbox.min.js": "25f3a6e4c9beffea79679814072a96abf4207ba8",
+    "/assets/lib/mobile-nav/mobile-nav.js": "d14eda6a830e882961d39d2ec8469ca01c067ba4",
+    "/assets/lib/owlcarousel/assets/owl.carousel.css": "a2fa945f9ac01fa3191a950c3f2cce188f50c4ef",
+    "/assets/lib/owlcarousel/assets/owl.carousel.min.css": "fba46353cf90450ef3d362a123f1e7af3e8c561e",
+    "/assets/lib/owlcarousel/assets/owl.theme.default.css": "5193b985aa3f992ce7bad494b6ab519707c48cc1",
+    "/assets/lib/owlcarousel/assets/owl.theme.default.min.css": "684d84ec40b305ca14efc88c91f12972cb6342b4",
+    "/assets/lib/owlcarousel/assets/owl.theme.green.css": "8978cbe89f18a68a71e22ee29f470acfc447771a",
+    "/assets/lib/owlcarousel/assets/owl.theme.green.min.css": "257d3bf44c17942628d55da6df95e69c97b3aba8",
+    "/assets/lib/owlcarousel/owl.carousel.min.js": "e2a600e433df72b4cfde93d7880e3114917a3cbe",
+    "/assets/lib/waypoints/waypoints.min.js": "56bdb149d9baf64474a4c24ae66445769a28254e",
+    "/assets/lib/wow/wow.js": "85f08770c306c14219be66007b4ad215cdf67782",
+    "/assets/lib/wow/wow.min.js": "6e6c6236ae0e36425cd195937d6d992cabb0907f",
+    "/circle.aa0eaf4f796113dbaff3.png": "8f4ec6ba21a2d876e136738635fc7cdd4f7e1d18",
+    "/index.html": "08e7390cbbd3697fa87868be6f5984094b62c607",
+    "/manifest.json": "a4232904cf3f7a523616304d4dd1f4b68895bc35",
+    "/world.2cf30ffdbfa3db621d30.gif": "2b1cd4cc4db7665fdac1d266bca85d8422ab7355"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
